@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Chapeau.Properties
+namespace ChapeauUI.Properties
 {
 
 

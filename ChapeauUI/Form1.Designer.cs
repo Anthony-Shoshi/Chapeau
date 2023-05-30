@@ -1,4 +1,4 @@
-﻿namespace Chapeau
+﻿namespace ChapeauUI
 {
     partial class Form1
     {

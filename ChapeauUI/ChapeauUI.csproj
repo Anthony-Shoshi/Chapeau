@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{91488D1C-73DA-4643-B623-780861D63C3D}</ProjectGuid>
+    <ProjectGuid>{A3D15C44-0FD1-459B-B77D-2E333522BEB9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Chapeau</RootNamespace>
-    <AssemblyName>Chapeau</AssemblyName>
+    <RootNamespace>ChapeauUI</RootNamespace>
+    <AssemblyName>ChapeauUI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

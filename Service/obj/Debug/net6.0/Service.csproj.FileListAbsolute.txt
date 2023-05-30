@@ -1,0 +1,12 @@
+D:\Inholland\term1.4\Project\Chapeau\Service\bin\Debug\net6.0\Service.deps.json
+D:\Inholland\term1.4\Project\Chapeau\Service\bin\Debug\net6.0\Service.dll
+D:\Inholland\term1.4\Project\Chapeau\Service\bin\Debug\net6.0\Service.pdb
+D:\Inholland\term1.4\Project\Chapeau\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
+D:\Inholland\term1.4\Project\Chapeau\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\Inholland\term1.4\Project\Chapeau\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+D:\Inholland\term1.4\Project\Chapeau\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+D:\Inholland\term1.4\Project\Chapeau\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+D:\Inholland\term1.4\Project\Chapeau\Service\obj\Debug\net6.0\Service.dll
+D:\Inholland\term1.4\Project\Chapeau\Service\obj\Debug\net6.0\refint\Service.dll
+D:\Inholland\term1.4\Project\Chapeau\Service\obj\Debug\net6.0\Service.pdb
+D:\Inholland\term1.4\Project\Chapeau\Service\obj\Debug\net6.0\ref\Service.dll

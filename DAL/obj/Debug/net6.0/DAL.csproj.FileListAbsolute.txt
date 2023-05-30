@@ -1,0 +1,5 @@
+D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache

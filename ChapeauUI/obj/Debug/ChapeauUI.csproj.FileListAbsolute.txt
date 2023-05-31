@@ -8,3 +8,13 @@ D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.csproj.Genera
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.csproj.CoreCompileInputs.cache
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.exe
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\ChapeauUI.exe.config
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\ChapeauUI.exe
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\ChapeauUI.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.csproj.AssemblyReference.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.csproj.SuggestedBindingRedirects.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.Properties.Resources.resources
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.csproj.GenerateResource.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.csproj.CoreCompileInputs.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.exe
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\ChapeauUI.pdb

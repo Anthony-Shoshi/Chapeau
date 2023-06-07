@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{11AD379E-916A-4596-9545-073E102190DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChapeauUI", "ChapeauUI\ChapeauUI.csproj", "{A3D15C44-0FD1-459B-B77D-2E333522BEB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChapeauUI", "ChapeauUI\ChapeauUI.csproj", "{A3D15C44-0FD1-459B-B77D-2E333522BEB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

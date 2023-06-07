@@ -85,13 +85,13 @@ namespace DAL
             {
                 command.Connection = OpenConnection();
                 parameterSetter?.Invoke(command);
+                return command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
             finally { CloseConnection(); }
-            return command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
         }
     }
 

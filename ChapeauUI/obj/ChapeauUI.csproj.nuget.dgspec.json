@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\ChapeauUI\\ChapeauUI.csproj": {}
+    "E:\\Inholland University\\Term 4\\Chapeau\\ChapeauUI\\ChapeauUI.csproj": {}
   },
   "projects": {
-    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\ChapeauUI\\ChapeauUI.csproj": {
+    "E:\\Inholland University\\Term 4\\Chapeau\\ChapeauUI\\ChapeauUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\ChapeauUI\\ChapeauUI.csproj",
+        "projectUniqueName": "E:\\Inholland University\\Term 4\\Chapeau\\ChapeauUI\\ChapeauUI.csproj",
         "projectName": "ChapeauUI",
-        "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\ChapeauUI\\ChapeauUI.csproj",
-        "packagesPath": "C:\\Users\\mmDIk\\.nuget\\packages\\",
-        "outputPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\ChapeauUI\\obj\\",
+        "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\ChapeauUI\\ChapeauUI.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "E:\\Inholland University\\Term 4\\Chapeau\\ChapeauUI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mmDIk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,17 +32,17 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj"
+              "E:\\Inholland University\\Term 4\\Chapeau\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\DAL\\DAL.csproj"
               },
-              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj": {
-                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj"
+              "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj": {
+                "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj"
               },
-              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\Service.csproj": {
-                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\Service.csproj"
+              "E:\\Inholland University\\Term 4\\Chapeau\\Service\\Service.csproj": {
+                "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\Service\\Service.csproj"
               },
-              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Utility\\Utility.csproj": {
-                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Utility\\Utility.csproj"
+              "E:\\Inholland University\\Term 4\\Chapeau\\Utility\\Utility.csproj": {
+                "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\Utility\\Utility.csproj"
               }
             }
           }
@@ -71,21 +75,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj": {
+    "E:\\Inholland University\\Term 4\\Chapeau\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj",
+        "projectUniqueName": "E:\\Inholland University\\Term 4\\Chapeau\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\mmDIk\\.nuget\\packages\\",
-        "outputPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\obj\\",
+        "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "E:\\Inholland University\\Term 4\\Chapeau\\DAL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mmDIk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,8 +107,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj": {
-                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj"
+              "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj": {
+                "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj"
               }
             }
           }
@@ -140,21 +148,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj": {
+    "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj",
+        "projectUniqueName": "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\mmDIk\\.nuget\\packages\\",
-        "outputPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\obj\\",
+        "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "E:\\Inholland University\\Term 4\\Chapeau\\Model\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mmDIk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -195,21 +207,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\Service.csproj": {
+    "E:\\Inholland University\\Term 4\\Chapeau\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\Service.csproj",
+        "projectUniqueName": "E:\\Inholland University\\Term 4\\Chapeau\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\mmDIk\\.nuget\\packages\\",
-        "outputPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\obj\\",
+        "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "E:\\Inholland University\\Term 4\\Chapeau\\Service\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mmDIk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -223,11 +239,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj"
+              "E:\\Inholland University\\Term 4\\Chapeau\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\DAL\\DAL.csproj"
               },
-              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj": {
-                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj"
+              "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj": {
+                "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj"
               }
             }
           }
@@ -257,21 +273,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Utility\\Utility.csproj": {
+    "E:\\Inholland University\\Term 4\\Chapeau\\Utility\\Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Utility\\Utility.csproj",
+        "projectUniqueName": "E:\\Inholland University\\Term 4\\Chapeau\\Utility\\Utility.csproj",
         "projectName": "Utility",
-        "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Utility\\Utility.csproj",
-        "packagesPath": "C:\\Users\\mmDIk\\.nuget\\packages\\",
-        "outputPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Utility\\obj\\",
+        "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\Utility\\Utility.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "E:\\Inholland University\\Term 4\\Chapeau\\Utility\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mmDIk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -312,7 +332,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

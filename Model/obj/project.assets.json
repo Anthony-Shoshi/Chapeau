@@ -8,19 +8,24 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\mmDIk\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj",
+      "projectUniqueName": "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj",
       "projectName": "Model",
-      "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj",
-      "packagesPath": "C:\\Users\\mmDIk\\.nuget\\packages\\",
-      "outputPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\obj\\",
+      "projectPath": "E:\\Inholland University\\Term 4\\Chapeau\\Model\\Model.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "E:\\Inholland University\\Term 4\\Chapeau\\Model\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\mmDIk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

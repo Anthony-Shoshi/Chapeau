@@ -44,3 +44,20 @@ C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\Service\obj\Debug\net6.0\S
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\Service\obj\Debug\net6.0\refint\Service.dll
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\Service\obj\Debug\net6.0\Service.pdb
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\Service\obj\Debug\net6.0\ref\Service.dll
+E:\Inholland University\Term 4\Chapeau\Service\bin\Debug\net6.0\Service.deps.json
+E:\Inholland University\Term 4\Chapeau\Service\bin\Debug\net6.0\Service.dll
+E:\Inholland University\Term 4\Chapeau\Service\bin\Debug\net6.0\Service.pdb
+E:\Inholland University\Term 4\Chapeau\Service\bin\Debug\net6.0\DAL.dll
+E:\Inholland University\Term 4\Chapeau\Service\bin\Debug\net6.0\Model.dll
+E:\Inholland University\Term 4\Chapeau\Service\bin\Debug\net6.0\DAL.pdb
+E:\Inholland University\Term 4\Chapeau\Service\bin\Debug\net6.0\Model.pdb
+E:\Inholland University\Term 4\Chapeau\Service\obj\Debug\net6.0\Service.csproj.AssemblyReference.cache
+E:\Inholland University\Term 4\Chapeau\Service\obj\Debug\net6.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+E:\Inholland University\Term 4\Chapeau\Service\obj\Debug\net6.0\Service.AssemblyInfoInputs.cache
+E:\Inholland University\Term 4\Chapeau\Service\obj\Debug\net6.0\Service.AssemblyInfo.cs
+E:\Inholland University\Term 4\Chapeau\Service\obj\Debug\net6.0\Service.csproj.CoreCompileInputs.cache
+E:\Inholland University\Term 4\Chapeau\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
+E:\Inholland University\Term 4\Chapeau\Service\obj\Debug\net6.0\Service.dll
+E:\Inholland University\Term 4\Chapeau\Service\obj\Debug\net6.0\refint\Service.dll
+E:\Inholland University\Term 4\Chapeau\Service\obj\Debug\net6.0\Service.pdb
+E:\Inholland University\Term 4\Chapeau\Service\obj\Debug\net6.0\ref\Service.dll

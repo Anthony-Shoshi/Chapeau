@@ -6,7 +6,7 @@
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
         public string Username { get; set; }
-        public string UserType { get; set; }
+        public UserType UserType { get; set; }
 
         public static Employee GetInstance()
         {

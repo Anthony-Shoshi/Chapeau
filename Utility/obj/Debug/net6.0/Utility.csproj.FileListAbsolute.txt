@@ -34,3 +34,15 @@ E:\Inholland University\Term 4\Chapeau\Utility\obj\Debug\net6.0\Utility.dll
 E:\Inholland University\Term 4\Chapeau\Utility\obj\Debug\net6.0\refint\Utility.dll
 E:\Inholland University\Term 4\Chapeau\Utility\obj\Debug\net6.0\Utility.pdb
 E:\Inholland University\Term 4\Chapeau\Utility\obj\Debug\net6.0\ref\Utility.dll
+D:\Inholland\term1.4\Project\Chapeau\Utility\bin\Debug\net6.0\Utility.deps.json
+D:\Inholland\term1.4\Project\Chapeau\Utility\bin\Debug\net6.0\Utility.dll
+D:\Inholland\term1.4\Project\Chapeau\Utility\bin\Debug\net6.0\Utility.pdb
+D:\Inholland\term1.4\Project\Chapeau\Utility\obj\Debug\net6.0\Utility.csproj.AssemblyReference.cache
+D:\Inholland\term1.4\Project\Chapeau\Utility\obj\Debug\net6.0\Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\Inholland\term1.4\Project\Chapeau\Utility\obj\Debug\net6.0\Utility.AssemblyInfoInputs.cache
+D:\Inholland\term1.4\Project\Chapeau\Utility\obj\Debug\net6.0\Utility.AssemblyInfo.cs
+D:\Inholland\term1.4\Project\Chapeau\Utility\obj\Debug\net6.0\Utility.csproj.CoreCompileInputs.cache
+D:\Inholland\term1.4\Project\Chapeau\Utility\obj\Debug\net6.0\Utility.dll
+D:\Inholland\term1.4\Project\Chapeau\Utility\obj\Debug\net6.0\refint\Utility.dll
+D:\Inholland\term1.4\Project\Chapeau\Utility\obj\Debug\net6.0\Utility.pdb
+D:\Inholland\term1.4\Project\Chapeau\Utility\obj\Debug\net6.0\ref\Utility.dll

@@ -1,15 +1,3 @@
-D:\Inholland\term1.4\Project\Chapeau\DAL\bin\Debug\net6.0\DAL.deps.json
-D:\Inholland\term1.4\Project\Chapeau\DAL\bin\Debug\net6.0\DAL.dll
-D:\Inholland\term1.4\Project\Chapeau\DAL\bin\Debug\net6.0\DAL.pdb
-D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
-D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
-D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
-D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
-D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
-D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.dll
-D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\refint\DAL.dll
-D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.pdb
-D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\ref\DAL.dll
 D:\Inholland\term1.4\Project\MyChapeau\DAL\bin\Debug\net6.0\DAL.deps.json
 D:\Inholland\term1.4\Project\MyChapeau\DAL\bin\Debug\net6.0\DAL.dll
 D:\Inholland\term1.4\Project\MyChapeau\DAL\bin\Debug\net6.0\DAL.pdb
@@ -55,6 +43,3 @@ E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\DAL.dll
 E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\refint\DAL.dll
 E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\DAL.pdb
 E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\ref\DAL.dll
-D:\Inholland\term1.4\Project\Chapeau\DAL\bin\Debug\net6.0\Model.dll
-D:\Inholland\term1.4\Project\Chapeau\DAL\bin\Debug\net6.0\Model.pdb
-D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete

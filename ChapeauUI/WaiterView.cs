@@ -71,9 +71,34 @@ namespace ChapeauUI
 
         private void TableControl_Click(object sender, EventArgs e)
         {
+            TableService service = new TableService();
             TableUserControl clickedTable = (TableUserControl)sender;
-            lblOrderTable.Text = $"Order - Table {clickedTable.Table.Number}";
-            ShowMenuPanel();
+            if (clickedTable.Table.Status == TableStatus.Available)
+            {
+                DialogResult result = MessageBox.Show("Do you want to occupy the table?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    lblOrderTable.Text = $"Order - Table {clickedTable.Table.Number}";
+                    ShowMenuPanel();
+                    service.UpdateStatus(clickedTable.Table.TableId, TableStatus.Occupied);
+                }
+
+            }
+            else if (clickedTable.Table.Status == TableStatus.Reserved)
+            {
+                DialogResult result = MessageBox.Show("The table is reserved. Do you want to occupy the table?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    lblOrderTable.Text = $"Order - Table {clickedTable.Table.Number}";
+                    ShowMenuPanel();
+                    service.UpdateStatus(clickedTable.Table.TableId, TableStatus.Occupied);
+                }
+
+            }
+            else if (clickedTable.Table.Status == TableStatus.Occupied)
+            {
+
+            }
         }
 
         //============================== END TABLE OVERVIEW ============================================

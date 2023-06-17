@@ -73,7 +73,7 @@ namespace ChapeauUI
         {
             TableService service = new TableService();
             TableUserControl clickedTable = (TableUserControl)sender;
-            if(clickedTable.Table.Status == TableStatus.Available)
+            if (clickedTable.Table.Status == TableStatus.Available)
             {
                 DialogResult result = MessageBox.Show("Do you want to occupy the table?", "Confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
@@ -82,7 +82,7 @@ namespace ChapeauUI
                     ShowMenuPanel();
                     service.UpdateStatus(clickedTable.Table.TableId, TableStatus.Occupied);
                 }
-                
+
             }
         }
 

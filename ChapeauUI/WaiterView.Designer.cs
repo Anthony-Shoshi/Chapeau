@@ -521,9 +521,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1486, 960);
             Controls.Add(topMenu);
+            Controls.Add(pnlMenuCrud);
             Controls.Add(tableLayoutPanelTable);
             Controls.Add(pnlMenu);
-            Controls.Add(pnlMenuCrud);
             Margin = new Padding(6);
             Name = "WaiterView";
             Text = "Chapeau - Restaurant Ordering System";

@@ -1,0 +1,189 @@
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.exe
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.dll.config
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.deps.json
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.runtimeconfig.json
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.pdb
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Security.Cryptography.ProtectedData.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Security.Permissions.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Windows.Extensions.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\Utility.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.pdb
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.pdb
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.pdb
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\bin\Debug\net6.0-windows\Utility.pdb
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.AssemblyReference.cache
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChefBartenderView.resources
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.Login.resources
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.WaiterView.resources
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.GenerateResource.cache
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.AssemblyInfoInputs.cache
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.AssemblyInfo.cs
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.CoreCompileInputs.cache
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.CopyComplete
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\refint\ChapeauUI.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.pdb
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.genruntimeconfig.cache
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ref\ChapeauUI.dll
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.Properties.Resources.resources
+D:\Inholland\term1.4\Project\MyChapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.TableUserControl.resources
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.AssemblyReference.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\refint\ChapeauUI.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.exe
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.dll.config
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.deps.json
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.runtimeconfig.json
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Security.Permissions.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Windows.Extensions.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Utility.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Utility.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChapeauLogin.resources
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChefBartenderView.resources
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.Properties.Resources.resources
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.TableUserControl.resources
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.WaiterView.resources
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.GenerateResource.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.AssemblyInfoInputs.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.AssemblyInfo.cs
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.CoreCompileInputs.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.CopyComplete
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.genruntimeconfig.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ref\ChapeauUI.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.exe
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.dll.config
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.deps.json
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.runtimeconfig.json
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.pdb
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Security.Cryptography.ProtectedData.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Security.Permissions.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Windows.Extensions.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Utility.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.pdb
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.pdb
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.pdb
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Utility.pdb
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.AssemblyReference.cache
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChapeauLogin.resources
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChefBartenderView.resources
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.Form1.resources
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.Properties.Resources.resources
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.TableUserControl.resources
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.WaiterView.resources
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.GenerateResource.cache
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.GeneratedMSBuildEditorConfig.editorconfig
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.AssemblyInfoInputs.cache
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.AssemblyInfo.cs
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.CoreCompileInputs.cache
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.CopyComplete
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\refint\ChapeauUI.dll
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.pdb
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.genruntimeconfig.cache
+E:\Inholland University\Term 4\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ref\ChapeauUI.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.exe
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.dll.config
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.deps.json
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.runtimeconfig.json
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\ChapeauUI.pdb
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Security.Cryptography.ProtectedData.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Security.Permissions.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\System.Windows.Extensions.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.pdb
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.pdb
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.pdb
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.AssemblyReference.cache
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChapeauLogin.resources
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChefBartenderView.resources
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.Properties.Resources.resources
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.TableUserControl.resources
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.WaiterView.resources
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.GenerateResource.cache
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.AssemblyInfoInputs.cache
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.AssemblyInfo.cs
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.CoreCompileInputs.cache
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.CopyComplete
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\refint\ChapeauUI.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.pdb
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.genruntimeconfig.cache
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ref\ChapeauUI.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.UserControls.OrderItemUserControl.resources
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.MenuItemNote.resources

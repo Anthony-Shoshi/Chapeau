@@ -1,5 +1,60 @@
+D:\Inholland\term1.4\Project\Chapeau\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Inholland\term1.4\Project\Chapeau\DAL\bin\Debug\net6.0\DAL.dll
+D:\Inholland\term1.4\Project\Chapeau\DAL\bin\Debug\net6.0\DAL.pdb
 D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
 D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
 D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
 D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
 D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.dll
+D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\Inholland\term1.4\Project\MyChapeau\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Inholland\term1.4\Project\MyChapeau\DAL\bin\Debug\net6.0\DAL.dll
+D:\Inholland\term1.4\Project\MyChapeau\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Inholland\term1.4\Project\MyChapeau\DAL\bin\Debug\net6.0\Model.dll
+D:\Inholland\term1.4\Project\MyChapeau\DAL\bin\Debug\net6.0\Model.pdb
+D:\Inholland\term1.4\Project\MyChapeau\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Inholland\term1.4\Project\MyChapeau\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Inholland\term1.4\Project\MyChapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Inholland\term1.4\Project\MyChapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Inholland\term1.4\Project\MyChapeau\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Inholland\term1.4\Project\MyChapeau\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+D:\Inholland\term1.4\Project\MyChapeau\DAL\obj\Debug\net6.0\DAL.dll
+D:\Inholland\term1.4\Project\MyChapeau\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Inholland\term1.4\Project\MyChapeau\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Inholland\term1.4\Project\MyChapeau\DAL\obj\Debug\net6.0\ref\DAL.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\bin\Debug\net6.0\DAL.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\bin\Debug\net6.0\DAL.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\bin\Debug\net6.0\Model.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\bin\Debug\net6.0\Model.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\obj\Debug\net6.0\DAL.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\obj\Debug\net6.0\DAL.pdb
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\DAL\obj\Debug\net6.0\ref\DAL.dll
+E:\Inholland University\Term 4\Chapeau\DAL\bin\Debug\net6.0\DAL.deps.json
+E:\Inholland University\Term 4\Chapeau\DAL\bin\Debug\net6.0\DAL.dll
+E:\Inholland University\Term 4\Chapeau\DAL\bin\Debug\net6.0\DAL.pdb
+E:\Inholland University\Term 4\Chapeau\DAL\bin\Debug\net6.0\Model.dll
+E:\Inholland University\Term 4\Chapeau\DAL\bin\Debug\net6.0\Model.pdb
+E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\DAL.dll
+E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\refint\DAL.dll
+E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\DAL.pdb
+E:\Inholland University\Term 4\Chapeau\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\Inholland\term1.4\Project\Chapeau\DAL\bin\Debug\net6.0\Model.dll
+D:\Inholland\term1.4\Project\Chapeau\DAL\bin\Debug\net6.0\Model.pdb
+D:\Inholland\term1.4\Project\Chapeau\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete

@@ -11,7 +11,7 @@ namespace DAL
 
         public BaseDao()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["ChapeauDatabase"].ConnectionString;
             sqlConnection = new SqlConnection(connectionString);
         }
 
@@ -26,8 +26,7 @@ namespace DAL
             }
             catch (Exception e)
             {
-                //Print.ErrorLog(e);
-                throw;
+                throw new Exception(e.Message);
             }
             return sqlConnection;
         }
@@ -55,6 +54,21 @@ namespace DAL
                 CloseConnection();
             }
         }
+        
+        protected SqlDataReader ExecuteReader(string sqlQuery, Action<SqlCommand> parameterSetter = null)
+        {
+            SqlCommand command = new SqlCommand(sqlQuery, sqlConnection);
+            try
+            {
+                command.Connection = OpenConnection();
+                parameterSetter?.Invoke(command);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+        }
 
         protected T ExecuteScalar<T>(string sqlQuery, Action<SqlCommand> parameterSetter = null)
         {
@@ -78,21 +92,6 @@ namespace DAL
             return result;
         }
 
-        protected SqlDataReader ExecuteReader(string sqlQuery, Action<SqlCommand> parameterSetter = null)
-        {
-            SqlCommand command = new SqlCommand(sqlQuery, sqlConnection);
-            try
-            {
-                command.Connection = OpenConnection();
-                parameterSetter?.Invoke(command);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            finally { CloseConnection(); }
-            return command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
-        }
     }
 
 }

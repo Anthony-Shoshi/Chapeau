@@ -315,16 +315,6 @@
         "runtime": {
           "bin/placeholder/Service.dll": {}
         }
-      },
-      "Utility/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/Utility.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Utility.dll": {}
-        }
       }
     }
   },
@@ -838,19 +828,13 @@
       "type": "project",
       "path": "../Service/Service.csproj",
       "msbuildProject": "../Service/Service.csproj"
-    },
-    "Utility/1.0.0": {
-      "type": "project",
-      "path": "../Utility/Utility.csproj",
-      "msbuildProject": "../Utility/Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "DAL >= 1.0.0",
       "Model >= 1.0.0",
-      "Service >= 1.0.0",
-      "Utility >= 1.0.0"
+      "Service >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -888,9 +872,6 @@
             },
             "D:\\Inholland\\term1.4\\Project\\Chapeau\\Service\\Service.csproj": {
               "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Service\\Service.csproj"
-            },
-            "D:\\Inholland\\term1.4\\Project\\Chapeau\\Utility\\Utility.csproj": {
-              "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Utility\\Utility.csproj"
             }
           }
         }

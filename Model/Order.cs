@@ -13,5 +13,6 @@ namespace Model
         public Table Table { get; set; }
         public OrderStatus Status { get; set; }
         public DateTime PlacedTime { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
     }
 }

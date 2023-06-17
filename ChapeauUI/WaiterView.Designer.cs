@@ -64,6 +64,8 @@
             this.lblMenuCat = new System.Windows.Forms.Label();
             this.lblMenuPrice = new System.Windows.Forms.Label();
             this.lblMenuName = new System.Windows.Forms.Label();
+            this.pnlOrderItemList = new System.Windows.Forms.Panel();
+            this.lblOrderItems = new System.Windows.Forms.Label();
             this.topMenu.SuspendLayout();
             this.pnlMenuMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuMenu)).BeginInit();
@@ -193,6 +195,8 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.White;
+            this.pnlMenu.Controls.Add(this.lblOrderItems);
+            this.pnlMenu.Controls.Add(this.pnlOrderItemList);
             this.pnlMenu.Controls.Add(this.lblOrderTable);
             this.pnlMenu.Controls.Add(this.tabControlMenu);
             this.pnlMenu.Location = new System.Drawing.Point(0, 53);
@@ -469,15 +473,33 @@
             this.lblMenuName.TabIndex = 0;
             this.lblMenuName.Text = "Item Name";
             // 
+            // pnlOrderItemList
+            // 
+            this.pnlOrderItemList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlOrderItemList.Location = new System.Drawing.Point(520, 37);
+            this.pnlOrderItemList.Name = "pnlOrderItemList";
+            this.pnlOrderItemList.Size = new System.Drawing.Size(268, 347);
+            this.pnlOrderItemList.TabIndex = 2;
+            // 
+            // lblOrderItems
+            // 
+            this.lblOrderItems.AutoSize = true;
+            this.lblOrderItems.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderItems.Location = new System.Drawing.Point(520, 6);
+            this.lblOrderItems.Name = "lblOrderItems";
+            this.lblOrderItems.Size = new System.Drawing.Size(124, 28);
+            this.lblOrderItems.TabIndex = 3;
+            this.lblOrderItems.Text = "Order Items";
+            // 
             // WaiterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.topMenu);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.tableLayoutPanelTable);
             this.Controls.Add(this.pnlMenuCrud);
-            this.Controls.Add(this.pnlMenu);
             this.Name = "WaiterView";
             this.Text = "Chapeau - Restaurant Ordering System";
             this.topMenu.ResumeLayout(false);
@@ -535,5 +557,7 @@
         private Button btnEditMenuItem;
         private Button btnMenuItemUpdate;
         private Label lblOrderTable;
+        private Label lblOrderItems;
+        private Panel pnlOrderItemList;
     }
 }

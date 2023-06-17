@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using System.Windows.Forms;
+using ChapeauUI.UserControls;
+using Model;
 using Service;
 
 namespace ChapeauUI
@@ -7,6 +9,7 @@ namespace ChapeauUI
     {
         bool isAlcoholic;
         private ListView listView;
+        private Dictionary<MenuItem, ItemDetails> orderMenuItems = new Dictionary<MenuItem, ItemDetails>();
 
         public WaiterView()
         {
@@ -26,6 +29,20 @@ namespace ChapeauUI
             tableLayoutPanelTable.Hide();
             pnlMenu.Hide();
             pnlMenuCrud.Hide();
+        }
+
+        //============================== START TABLE OVERVIEW ============================================
+
+        private void pictureBoxTableMenu_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            tableLayoutPanelTable.Show();
+        }
+
+        private void lblTableMenu_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            tableLayoutPanelTable.Show();
         }
 
         private void GeneratTable()
@@ -58,6 +75,10 @@ namespace ChapeauUI
             lblOrderTable.Text = $"Order - Table {clickedTable.Table.Number}";
             ShowMenuPanel();
         }
+
+        //============================== END TABLE OVERVIEW ============================================
+
+        //============================== START ORDER MENU ============================================
 
         private void ShowMenuPanel()
         {
@@ -124,20 +145,102 @@ namespace ChapeauUI
             listView.Columns[0].Width = 350;
             listView.Columns[1].Width = 50;
 
+            listView.Click += MenuItemClicked;
+
             return listView;
         }
 
-        private void pictureBoxTableMenu_Click(object sender, EventArgs e)
+        private void MenuItemClicked(object sender, EventArgs e)
         {
-            HidePanels();
-            tableLayoutPanelTable.Show();
+            ListView listView = (ListView)sender;
+
+            if (listView.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listView.SelectedItems[0];
+                MenuItem menuItem = (MenuItem)selectedItem.Tag;
+
+
+                if (orderMenuItems.ContainsKey(menuItem))
+                {
+                    orderMenuItems[menuItem].Quantity++;
+                }
+                else
+                {
+                    orderMenuItems.Add(menuItem, new ItemDetails { Quantity = 1, Note = "" });
+                }
+
+                UpdateOrderItem();
+            }
         }
 
-        private void lblTableMenu_Click(object sender, EventArgs e)
+        private void UpdateOrderItem()
         {
-            HidePanels();
-            tableLayoutPanelTable.Show();
+            // Clear existing controls on the panel
+            pnlOrderItemList.Controls.Clear();
+
+            // Create a vertical flow layout panel to hold the Customer user controls
+            FlowLayoutPanel flpnlOrderItems = new FlowLayoutPanel();
+            flpnlOrderItems.Dock = DockStyle.Fill;
+            flpnlOrderItems.FlowDirection = FlowDirection.TopDown;
+            flpnlOrderItems.AutoScroll = true;
+
+            // Iterate through the orderMenuItems dictionary
+            foreach (var item in orderMenuItems)
+            {
+                MenuItem menuItem = item.Key;
+                ItemDetails itemDetails = item.Value;
+
+                // Create a new instance of the Customer user control
+                OrderItemUserControl orderItemUserControl = new OrderItemUserControl(menuItem, itemDetails);
+
+                orderItemUserControl.IncrementButton.Click += IncrementButton_Click;
+                orderItemUserControl.DecrementButton.Click += DecrementButton_Click;
+                // Add the user control to the flow layout panel
+                flpnlOrderItems.Controls.Add(orderItemUserControl);
+            }
+
+            // Add the flow layout panel to the main panel
+            pnlOrderItemList.Controls.Add(flpnlOrderItems);
         }
+
+        private void IncrementButton_Click(object sender, EventArgs e)
+        {
+            OrderItemUserControl orderItemUserControl = (OrderItemUserControl)((Button)sender).Parent;
+
+            MenuItem menuItem = orderItemUserControl.MenuItem;
+            ItemDetails itemDetails = orderItemUserControl.ItemDetails;
+
+            itemDetails.Quantity++;
+
+            orderItemUserControl.UpdateData();
+        }
+
+        private void DecrementButton_Click(object sender, EventArgs e)
+        {
+            OrderItemUserControl orderItemUserControl = (OrderItemUserControl)((Button)sender).Parent;
+
+            MenuItem menuItem = orderItemUserControl.MenuItem;
+            ItemDetails itemDetails = orderItemUserControl.ItemDetails;
+
+            if (itemDetails.Quantity > 0)
+            {
+                itemDetails.Quantity--;
+
+                if (itemDetails.Quantity == 0)
+                {
+                    orderMenuItems.Remove(menuItem);
+                    UpdateOrderItem();
+                }
+                else
+                {
+                    orderItemUserControl.UpdateData();
+                }
+            }
+        }
+
+        //============================== END ORDER MENU ============================================
+
+        //============================== START MENU CRUD ============================================
 
         private void pictureBoxMenuMenu_Click(object sender, EventArgs e)
         {
@@ -440,6 +543,8 @@ namespace ChapeauUI
                 MessageBox.Show("Please select a menu item to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        //============================== END MENU CRUD ============================================
 
     }
 }

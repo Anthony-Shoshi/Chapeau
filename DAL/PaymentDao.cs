@@ -50,7 +50,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@PaymentDate", payment.PaymentDate);
                 command.Parameters.AddWithValue("@Tip", payment.Tip);
                 command.Parameters.AddWithValue("@Comment", payment.Comment);
-                command.Parameters.AddWithValue("@OrderId", payment.OrderId);
+                command.Parameters.AddWithValue("@OrderId", payment.Order.OrderId);
                 command.Parameters.AddWithValue("@Amount", payment.Amount);
             };
 
@@ -67,7 +67,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@PaymentDate", payment.PaymentDate);
                 command.Parameters.AddWithValue("@Tip", payment.Tip);
                 command.Parameters.AddWithValue("@Comment", payment.Comment);
-                command.Parameters.AddWithValue("@OrderId", payment.OrderId);
+                command.Parameters.AddWithValue("@OrderId", payment.Order.OrderId);
                 command.Parameters.AddWithValue("@Amount", payment.Amount);
                 command.Parameters.AddWithValue("@PaymentId", payment.PaymentId);
             };

@@ -1,6 +1,5 @@
 ﻿using Model;
 using Service;
-using Utility;
 
 namespace ChapeauUI
 {
@@ -46,8 +45,8 @@ namespace ChapeauUI
         {
             this.Hide();
             Form home;
-            string userType = Employee.GetInstance().UserType.ToLower();
-            home = (userType == AppConstants.Waiter) ? new WaiterView() : new ChefBartenderView();
+            UserType userType = Employee.GetInstance().UserType;
+            home = (userType == UserType.Waiter) ? new WaiterView() : new ChefBartenderView();
             home.Closed += (s, args) => this.Close();
             home.Show();
         }

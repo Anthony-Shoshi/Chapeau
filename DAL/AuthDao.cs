@@ -48,7 +48,17 @@ namespace DAL
                 employee.EmployeeName = (string)reader["Employee_Name"];
                 employee.EmployeeId = (int)reader["Employee_Id"];
                 employee.Username = username;
-                employee.UserType = (string)reader["User_Type"];
+
+                string userTypeString = (string)reader["User_Type"];
+                if (Enum.TryParse(userTypeString, out UserType userType))
+                {
+                    employee.UserType = userType;
+                }
+                else
+                {
+                    employee.UserType = UserType.Waiter;                                                         
+                }
+
             }
 
             reader.Close();

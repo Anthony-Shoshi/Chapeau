@@ -19,11 +19,11 @@ namespace DAL
 
         public void AddOrderItem(OrderItem orderItem)
         {
-            string sqlQuery = "INSERT INTO Order_Item (Order_Id, Menu_Id, Quantity, Note, Unit_Price) VALUES (@OrderId, @MenuId, @Quantity, @Note, @UnitPrice)";
+            string sqlQuery = "INSERT INTO Order_Item (Order_Id, Menu_Id, Quantity, Note, Unit_Price) VALUES (@OrderId, @MenuItem, @Quantity, @Note, @UnitPrice)";
             ExecuteNonQuery(sqlQuery, command =>
             {
                 command.Parameters.AddWithValue("@OrderId", orderItem.Order.OrderId);
-                command.Parameters.AddWithValue("@MenuId", orderItem.MenuItem.MenuId);
+                command.Parameters.AddWithValue("@MenuItem", orderItem.MenuItem.MenuId);
                 command.Parameters.AddWithValue("@Quantity", orderItem.Quantity);
                 command.Parameters.AddWithValue("@Note", orderItem.Note);
                 command.Parameters.AddWithValue("@UnitPrice", orderItem.UnitPrice);
@@ -32,7 +32,7 @@ namespace DAL
 
         public List<OrderItem> GetOrderItemsByOrderId(int orderId)
         {
-            string sqlQuery = "SELECT oi.*, m.* FROM Order_Item oi INNER JOIN MenuItem m ON oi.Menu_Id = m.Menu_Id WHERE oi.Order_Id = @OrderId";
+            string sqlQuery = "SELECT * FROM Order_Item WHERE Order_Id = @OrderId";
             List<OrderItem> orderItems = new List<OrderItem>();
             SqlDataReader reader = ExecuteReader(sqlQuery, command =>
             {
@@ -45,7 +45,15 @@ namespace DAL
                 {
                     MenuId = Convert.ToInt32(reader["Menu_Id"]),
                     Name = reader["Name"].ToString(),
-                    // Populate other properties of MenuItem as needed
+                    Price = Convert.ToDecimal(reader["Price"]),
+                    IsAlcoholic = Convert.ToBoolean(reader["IsAlcoholic"]),
+                    Category = new MenuCategory()
+                    {
+                        CategoryId = Convert.ToInt32(reader["Category_Id"]),
+                        CategoryName = reader["CategoryName"].ToString()
+                    },
+                    MenuType = reader["MenuType"].ToString(),
+                    Stock = Convert.ToInt32(reader["Stock"])
                 };
 
                 OrderItem orderItem = new OrderItem()
@@ -71,6 +79,27 @@ namespace DAL
             {
                 command.Parameters.AddWithValue("@OrderId", orderId);
                 command.Parameters.AddWithValue("@Status", status.ToString());
+            });
+        }
+
+        public void UpdateOrderItem(OrderItem orderItem)
+        {
+            string sqlQuery = "UPDATE Order_Item SET Quantity = @Quantity, Note = @Note, Unit_Price = @UnitPrice WHERE Order_Item_Id = @OrderItemId";
+            ExecuteNonQuery(sqlQuery, command =>
+            {
+                command.Parameters.AddWithValue("@OrderItemId", orderItem.OrderItemId);
+                command.Parameters.AddWithValue("@Quantity", orderItem.Quantity);
+                command.Parameters.AddWithValue("@Note", orderItem.Note);
+                command.Parameters.AddWithValue("@UnitPrice", orderItem.UnitPrice);
+            });
+        }
+
+        public void DeleteOrderItem(int orderItemId)
+        {
+            string sqlQuery = "DELETE FROM Order_Item WHERE Order_Item_Id = @OrderItemId";
+            ExecuteNonQuery(sqlQuery, command =>
+            {
+                command.Parameters.AddWithValue("@OrderItemId", orderItemId);
             });
         }
     }

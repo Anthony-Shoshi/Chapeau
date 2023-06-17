@@ -36,5 +36,15 @@ namespace Service
         {
             orderDao.UpdateOrderStatus(orderId, status);
         }
+
+        public void UpdateOrderItem(OrderItem orderItem)
+        {
+            orderDao.UpdateOrderItem(orderItem);
+        }
+
+        public void DeleteOrderItem(int orderItemId)
+        {
+            orderDao.DeleteOrderItem(orderItemId);
+        }
     }
 }

@@ -165,15 +165,12 @@ D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\runtimes
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.dll
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.dll
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.dll
-D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Utility.dll
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.pdb
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.pdb
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.pdb
-D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Utility.pdb
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.csproj.AssemblyReference.cache
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChapeauLogin.resources
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChefBartenderView.resources
-D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.Form1.resources
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.Properties.Resources.resources
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.TableUserControl.resources
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.WaiterView.resources
@@ -188,3 +185,4 @@ D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\refint\C
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.pdb
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.genruntimeconfig.cache
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ref\ChapeauUI.dll
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.UserControls.OrderItemUserControl.resources

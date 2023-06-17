@@ -8,6 +8,8 @@ namespace Model
 {
     public class Payment
     {
+        public int OrderId;
+
         public int PaymentId { get; set; }
         public Table Table { get; set; }
         public Order Order { get; set; }

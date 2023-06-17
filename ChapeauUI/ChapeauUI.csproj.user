@@ -7,6 +7,9 @@
     <Compile Update="ChapeauLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MenuItemNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UserControls\TableUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

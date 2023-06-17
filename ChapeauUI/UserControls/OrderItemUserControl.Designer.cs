@@ -51,7 +51,7 @@
             // 
             this.lblQnty.AutoSize = true;
             this.lblQnty.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblQnty.Location = new System.Drawing.Point(204, 20);
+            this.lblQnty.Location = new System.Drawing.Point(189, 20);
             this.lblQnty.Name = "lblQnty";
             this.lblQnty.Size = new System.Drawing.Size(17, 19);
             this.lblQnty.TabIndex = 1;
@@ -60,7 +60,7 @@
             // btnIncrement
             // 
             this.btnIncrement.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnIncrement.Location = new System.Drawing.Point(225, 16);
+            this.btnIncrement.Location = new System.Drawing.Point(210, 16);
             this.btnIncrement.Name = "btnIncrement";
             this.btnIncrement.Size = new System.Drawing.Size(25, 26);
             this.btnIncrement.TabIndex = 2;
@@ -70,7 +70,7 @@
             // btnDecrement
             // 
             this.btnDecrement.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDecrement.Location = new System.Drawing.Point(175, 16);
+            this.btnDecrement.Location = new System.Drawing.Point(160, 16);
             this.btnDecrement.Name = "btnDecrement";
             this.btnDecrement.Size = new System.Drawing.Size(25, 26);
             this.btnDecrement.TabIndex = 3;
@@ -98,7 +98,7 @@
             this.Controls.Add(this.lblQnty);
             this.Controls.Add(this.lblMenuItemName);
             this.Name = "OrderItemUserControl";
-            this.Size = new System.Drawing.Size(259, 59);
+            this.Size = new System.Drawing.Size(247, 59);
             this.ResumeLayout(false);
             this.PerformLayout();
 

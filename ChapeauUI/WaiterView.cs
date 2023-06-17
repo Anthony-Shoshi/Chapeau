@@ -175,32 +175,56 @@ namespace ChapeauUI
 
         private void UpdateOrderItem()
         {
-            // Clear existing controls on the panel
             pnlOrderItemList.Controls.Clear();
 
-            // Create a vertical flow layout panel to hold the Customer user controls
             FlowLayoutPanel flpnlOrderItems = new FlowLayoutPanel();
             flpnlOrderItems.Dock = DockStyle.Fill;
             flpnlOrderItems.FlowDirection = FlowDirection.TopDown;
             flpnlOrderItems.AutoScroll = true;
+            flpnlOrderItems.WrapContents = false;
 
-            // Iterate through the orderMenuItems dictionary
             foreach (var item in orderMenuItems)
             {
                 MenuItem menuItem = item.Key;
                 ItemDetails itemDetails = item.Value;
 
-                // Create a new instance of the Customer user control
                 OrderItemUserControl orderItemUserControl = new OrderItemUserControl(menuItem, itemDetails);
 
                 orderItemUserControl.IncrementButton.Click += IncrementButton_Click;
                 orderItemUserControl.DecrementButton.Click += DecrementButton_Click;
-                // Add the user control to the flow layout panel
+                orderItemUserControl.NoteDoubleClick += OrderItemUserControl_NoteDoubleClick;
                 flpnlOrderItems.Controls.Add(orderItemUserControl);
             }
 
-            // Add the flow layout panel to the main panel
             pnlOrderItemList.Controls.Add(flpnlOrderItems);
+        }
+
+        private void OrderItemUserControl_NoteDoubleClick(object sender, EventArgs e)
+        {
+            OrderItemUserControl orderItemUserControl = (OrderItemUserControl)sender;
+            MenuItem menuItem = orderItemUserControl.MenuItem;
+
+            MenuItemNote menuItemNote = new MenuItemNote(menuItem);
+            menuItemNote.NoteText = orderItemUserControl.ItemDetails.Note;
+            menuItemNote.SaveButtonClicked += MenuItemNote_SaveButtonClicked;
+            menuItemNote.Show();
+        }
+
+        private void MenuItemNote_SaveButtonClicked(object sender, string note)
+        {
+            MenuItemNote menuItemNote = (MenuItemNote)sender;
+            MenuItem menuItem = menuItemNote.MenuItem;
+
+            if (orderMenuItems.ContainsKey(menuItem))
+            {
+                orderMenuItems[menuItem].Note = note;
+            }
+            else
+            {
+                orderMenuItems[menuItem].Note = "";
+            }
+
+            UpdateOrderItem();
         }
 
         private void IncrementButton_Click(object sender, EventArgs e)

@@ -186,3 +186,4 @@ D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauU
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.genruntimeconfig.cache
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ref\ChapeauUI.dll
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.UserControls.OrderItemUserControl.resources
+D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.MenuItemNote.resources

@@ -17,6 +17,7 @@ namespace ChapeauUI.UserControls
         public ItemDetails ItemDetails;
         public Button IncrementButton { get; set; }
         public Button DecrementButton { get; set; }
+        public event EventHandler NoteDoubleClick;
 
         public OrderItemUserControl(MenuItem menuItem, ItemDetails itemDetails)
         {
@@ -24,16 +25,30 @@ namespace ChapeauUI.UserControls
 
             IncrementButton = btnIncrement;
             DecrementButton = btnDecrement;
+            lblMenuItemName.DoubleClick += LblMenuItemName_DoubleClick;
 
             MenuItem = menuItem;
             ItemDetails = itemDetails;
             UpdateData();
         }
 
+        private void LblMenuItemName_DoubleClick(object sender, EventArgs e)
+        {
+            NoteDoubleClick?.Invoke(this, EventArgs.Empty);
+        }
+
         public void UpdateData()
         {
             lblMenuItemName.Text = MenuItem.Name;
             lblQnty.Text = ItemDetails.Quantity.ToString();
+            if (ItemDetails.Note.Equals(""))
+            {
+                lblNote.Hide();
+            }
+            else
+            {
+                lblNote.Text = ItemDetails.Note;
+            }
         }
     }
 }

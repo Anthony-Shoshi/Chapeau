@@ -33,5 +33,16 @@ namespace DAL
 
             return tables;
         }
+        public void UpdateTableStatus(int tableId, TableStatus newStatus)
+        {
+            string updateQuery = "UPDATE Restaurant_Table SET Status = @NewStatus WHERE Table_Id = @TableId";
+
+            ExecuteNonQuery(updateQuery, command =>
+            {
+
+                command.Parameters.AddWithValue("@NewStatus", newStatus.ToString());
+                command.Parameters.AddWithValue("@TableId", tableId);
+            });
+        }
     }
 }

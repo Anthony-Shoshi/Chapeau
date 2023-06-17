@@ -74,11 +74,9 @@ C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.dll
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.dll
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.dll
-C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Utility.dll
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\DAL.pdb
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Model.pdb
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Service.pdb
-C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\bin\Debug\net6.0-windows\Utility.pdb
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChapeauLogin.resources
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.ChefBartenderView.resources
 C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.Properties.Resources.resources
@@ -186,3 +184,4 @@ D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauU
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.genruntimeconfig.cache
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ref\ChapeauUI.dll
 D:\Inholland\term1.4\Project\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.UserControls.OrderItemUserControl.resources
+C:\IT Inholland Year 1\Term 4\Project Chapeau\Chapeau\ChapeauUI\obj\Debug\net6.0-windows\ChapeauUI.UserControls.OrderItemUserControl.resources

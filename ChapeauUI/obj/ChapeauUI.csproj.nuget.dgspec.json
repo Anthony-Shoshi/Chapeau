@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Inholland\\term1.4\\Project\\Chapeau\\ChapeauUI\\ChapeauUI.csproj": {}
+    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\ChapeauUI\\ChapeauUI.csproj": {}
   },
   "projects": {
-    "D:\\Inholland\\term1.4\\Project\\Chapeau\\ChapeauUI\\ChapeauUI.csproj": {
+    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\ChapeauUI\\ChapeauUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Inholland\\term1.4\\Project\\Chapeau\\ChapeauUI\\ChapeauUI.csproj",
+        "projectUniqueName": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\ChapeauUI\\ChapeauUI.csproj",
         "projectName": "ChapeauUI",
-        "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\ChapeauUI\\ChapeauUI.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\ChapeauUI\\obj\\",
+        "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\ChapeauUI\\ChapeauUI.csproj",
+        "packagesPath": "C:\\Users\\mmDIk\\.nuget\\packages\\",
+        "outputPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\ChapeauUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mmDIk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,14 +28,14 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "D:\\Inholland\\term1.4\\Project\\Chapeau\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\DAL\\DAL.csproj"
+              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj"
               },
-              "D:\\Inholland\\term1.4\\Project\\Chapeau\\Model\\Model.csproj": {
-                "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Model\\Model.csproj"
+              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj": {
+                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj"
               },
-              "D:\\Inholland\\term1.4\\Project\\Chapeau\\Service\\Service.csproj": {
-                "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Service\\Service.csproj"
+              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\Service.csproj": {
+                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\Service.csproj"
               }
             }
           }
@@ -68,21 +68,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Inholland\\term1.4\\Project\\Chapeau\\DAL\\DAL.csproj": {
+    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Inholland\\term1.4\\Project\\Chapeau\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\DAL\\obj\\",
+        "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\mmDIk\\.nuget\\packages\\",
+        "outputPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mmDIk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,8 +96,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Inholland\\term1.4\\Project\\Chapeau\\Model\\Model.csproj": {
-                "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Model\\Model.csproj"
+              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj": {
+                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj"
               }
             }
           }
@@ -137,21 +137,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Inholland\\term1.4\\Project\\Chapeau\\Model\\Model.csproj": {
+    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Model\\obj\\",
+        "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\mmDIk\\.nuget\\packages\\",
+        "outputPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mmDIk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -192,21 +192,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Inholland\\term1.4\\Project\\Chapeau\\Service\\Service.csproj": {
+    "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Service\\Service.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Service\\obj\\",
+        "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\mmDIk\\.nuget\\packages\\",
+        "outputPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mmDIk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -220,11 +220,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Inholland\\term1.4\\Project\\Chapeau\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\DAL\\DAL.csproj"
+              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\DAL\\DAL.csproj"
               },
-              "D:\\Inholland\\term1.4\\Project\\Chapeau\\Model\\Model.csproj": {
-                "projectPath": "D:\\Inholland\\term1.4\\Project\\Chapeau\\Model\\Model.csproj"
+              "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj": {
+                "projectPath": "C:\\IT Inholland Year 1\\Term 4\\Project Chapeau\\Chapeau\\Model\\Model.csproj"
               }
             }
           }
@@ -254,7 +254,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

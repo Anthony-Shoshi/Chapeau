@@ -37,9 +37,6 @@ namespace ChapeauUI
                 case TableStatus.Occupied:
                     setColor(Color.Red);
                     break;
-                case TableStatus.Reserved:
-                    setColor(Color.Yellow);
-                    break;
                 default:
                     setColor(Color.Gray);
                     break;

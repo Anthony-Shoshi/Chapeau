@@ -4,6 +4,5 @@
     {
         Available,
         Occupied,
-        Reserved,
     }
 }

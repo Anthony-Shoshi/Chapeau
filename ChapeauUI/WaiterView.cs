@@ -36,13 +36,19 @@ namespace ChapeauUI
         private void pictureBoxTableMenu_Click(object sender, EventArgs e)
         {
             HidePanels();
+            tableLayoutPanelTable.Controls.Clear();
             tableLayoutPanelTable.Show();
+            GeneratTable();
+
         }
 
         private void lblTableMenu_Click(object sender, EventArgs e)
         {
             HidePanels();
+            tableLayoutPanelTable.Controls.Clear();
             tableLayoutPanelTable.Show();
+            GeneratTable();
+
         }
 
         private void GeneratTable()
@@ -53,22 +59,25 @@ namespace ChapeauUI
             int rowIndex = 0;
             int columnIndex = 0;
 
-            foreach (var table in tables)
+            if (tableLayoutPanelTable.Controls.Count == 0)
             {
-                UserControl tableControl = new TableUserControl(table);
-                tableLayoutPanelTable.Controls.Add(tableControl, columnIndex, rowIndex);
-
-                columnIndex++;
-                if (columnIndex >= columnCount)
+                foreach (var table in tables)
                 {
-                    columnIndex = 0;
-                    rowIndex++;
-                }
+                    UserControl tableControl = new TableUserControl(table);
+                    tableLayoutPanelTable.Controls.Add(tableControl, columnIndex, rowIndex);
 
-                tableControl.Click += TableControl_Click;
+                    columnIndex++;
+                    if (columnIndex >= columnCount)
+                    {
+                        columnIndex = 0;
+                        rowIndex++;
+                    }
+
+                    tableControl.Click += TableControl_Click;
+
+                }
             }
         }
-
         private void TableControl_Click(object sender, EventArgs e)
         {
             TableService service = new TableService();
@@ -76,17 +85,6 @@ namespace ChapeauUI
             if (clickedTable.Table.Status == TableStatus.Available)
             {
                 DialogResult result = MessageBox.Show("Do you want to occupy the table?", "Confirmation", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    lblOrderTable.Text = $"Order - Table {clickedTable.Table.Number}";
-                    ShowMenuPanel();
-                    service.UpdateStatus(clickedTable.Table.TableId, TableStatus.Occupied);
-                }
-
-            }
-            else if (clickedTable.Table.Status == TableStatus.Reserved)
-            {
-                DialogResult result = MessageBox.Show("The table is reserved. Do you want to occupy the table?", "Confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     lblOrderTable.Text = $"Order - Table {clickedTable.Table.Number}";

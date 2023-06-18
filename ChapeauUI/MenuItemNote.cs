@@ -25,6 +25,7 @@ namespace ChapeauUI
         {
             InitializeComponent();
             MenuItem = menuItem;
+            this.Text = "Add Special Note - " + MenuItem.Name;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

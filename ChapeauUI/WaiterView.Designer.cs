@@ -40,6 +40,8 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.tableLayoutPanelTable = new System.Windows.Forms.TableLayoutPanel();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnClearOrder = new System.Windows.Forms.Button();
+            this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.lblOrderItems = new System.Windows.Forms.Label();
             this.pnlOrderItemList = new System.Windows.Forms.Panel();
             this.lblOrderTable = new System.Windows.Forms.Label();
@@ -66,7 +68,6 @@
             this.lblMenuCat = new System.Windows.Forms.Label();
             this.lblMenuPrice = new System.Windows.Forms.Label();
             this.lblMenuName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.topMenu.SuspendLayout();
             this.pnlMenuMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuMenu)).BeginInit();
@@ -196,7 +197,8 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.White;
-            this.pnlMenu.Controls.Add(this.button1);
+            this.pnlMenu.Controls.Add(this.btnClearOrder);
+            this.pnlMenu.Controls.Add(this.btnPlaceOrder);
             this.pnlMenu.Controls.Add(this.lblOrderItems);
             this.pnlMenu.Controls.Add(this.pnlOrderItemList);
             this.pnlMenu.Controls.Add(this.lblOrderTable);
@@ -205,6 +207,32 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(800, 397);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // btnClearOrder
+            // 
+            this.btnClearOrder.BackColor = System.Drawing.Color.Firebrick;
+            this.btnClearOrder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClearOrder.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClearOrder.Location = new System.Drawing.Point(650, 12);
+            this.btnClearOrder.Name = "btnClearOrder";
+            this.btnClearOrder.Size = new System.Drawing.Size(85, 23);
+            this.btnClearOrder.TabIndex = 5;
+            this.btnClearOrder.Text = "Clear Order";
+            this.btnClearOrder.UseVisualStyleBackColor = false;
+            this.btnClearOrder.Visible = false;
+            this.btnClearOrder.Click += new System.EventHandler(this.btnClearOrder_Click);
+            // 
+            // btnPlaceOrder
+            // 
+            this.btnPlaceOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(161)))), ((int)(((byte)(209)))));
+            this.btnPlaceOrder.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(520, 350);
+            this.btnPlaceOrder.Name = "btnPlaceOrder";
+            this.btnPlaceOrder.Size = new System.Drawing.Size(268, 34);
+            this.btnPlaceOrder.TabIndex = 4;
+            this.btnPlaceOrder.Text = "Place Order";
+            this.btnPlaceOrder.UseVisualStyleBackColor = false;
+            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
             // 
             // lblOrderItems
             // 
@@ -219,6 +247,8 @@
             // pnlOrderItemList
             // 
             this.pnlOrderItemList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlOrderItemList.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pnlOrderItemList.ForeColor = System.Drawing.Color.Black;
             this.pnlOrderItemList.Location = new System.Drawing.Point(520, 37);
             this.pnlOrderItemList.Name = "pnlOrderItemList";
             this.pnlOrderItemList.Size = new System.Drawing.Size(268, 307);
@@ -493,17 +523,6 @@
             this.lblMenuName.TabIndex = 0;
             this.lblMenuName.Text = "Item Name";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(161)))), ((int)(((byte)(209)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(520, 350);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(268, 34);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Place Order";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // WaiterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -572,6 +591,7 @@
         private Label lblOrderTable;
         private Label lblOrderItems;
         private Panel pnlOrderItemList;
-        private Button button1;
+        private Button btnPlaceOrder;
+        private Button btnClearOrder;
     }
 }

@@ -14,5 +14,10 @@ namespace Model
         public int Quantity { get; set; }
         public string Note { get; set; }
         public decimal UnitPrice { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Order.OrderId} - {Order.Table} - {Order.Employee} - {Order.Status}\n{MenuItem.Name} - {MenuItem.Price}\n{Quantity} - {Note} - {UnitPrice}";
+        }
     }
 }

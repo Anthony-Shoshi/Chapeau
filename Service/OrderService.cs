@@ -17,9 +17,9 @@ namespace Service
             orderDao = new OrderDao();
         }
 
-        public void PlaceOrder(Order order)
+        public int PlaceOrder(Order order)
         {
-            orderDao.PlaceOrder(order);
+            return orderDao.PlaceOrder(order);
         }
 
         public void AddOrderItem(OrderItem orderItem)

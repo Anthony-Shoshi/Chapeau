@@ -7,6 +7,7 @@ namespace ChapeauUI
 {
     public partial class WaiterView : Form
     {
+        private Table ClickedTable;
         bool isAlcoholic;
         private ListView listView;
         private Dictionary<MenuItem, ItemDetails> orderMenuItems = new Dictionary<MenuItem, ItemDetails>();
@@ -14,6 +15,7 @@ namespace ChapeauUI
         public WaiterView()
         {
             InitializeComponent();
+            UpdateMenuOnUserRole();
             GeneratTable();
             HidePanels();
             lblUsername.Text = Employee.GetInstance().Username;
@@ -22,6 +24,20 @@ namespace ChapeauUI
             btnMenuItemUpdate.Visible = false;
             HidePanels();
             tableLayoutPanelTable.Show();
+        }
+
+        private void UpdateMenuOnUserRole()
+        {
+            if (Employee.GetInstance().UserType == UserType.Manager)
+            {
+                pictureBoxMenuMenu.Show();
+                pnlMenuMenu.Show();
+            }
+            else
+            {
+                pictureBoxMenuMenu.Hide();
+                pnlMenuMenu.Hide();
+            }
         }
 
         private void HidePanels()
@@ -78,10 +94,12 @@ namespace ChapeauUI
                 }
             }
         }
+
         private void TableControl_Click(object sender, EventArgs e)
         {
             TableService service = new TableService();
             TableUserControl clickedTable = (TableUserControl)sender;
+            ClickedTable = clickedTable.Table;
             if (clickedTable.Table.Status == TableStatus.Available)
             {
                 DialogResult result = MessageBox.Show("Do you want to occupy the table?", "Confirmation", MessageBoxButtons.YesNo);
@@ -106,8 +124,23 @@ namespace ChapeauUI
         private void ShowMenuPanel()
         {
             HidePanels();
-            pnlMenu.Show();
             LoadMenu();
+            UpdatePlaceOrderButton();
+            pnlMenu.Show();
+        }
+
+        private void UpdatePlaceOrderButton()
+        {
+            if (orderMenuItems.Count() > 0)
+            {
+                btnPlaceOrder.Enabled = true;
+                btnClearOrder.Visible = true;
+            }
+            else
+            {
+                btnPlaceOrder.Enabled = false;
+                btnClearOrder.Visible = false;
+            }
         }
 
         private void LoadMenu()
@@ -142,6 +175,7 @@ namespace ChapeauUI
                         ListViewItem listItem = new ListViewItem(item.Name);
                         listItem.Tag = item;
                         listItem.SubItems.Add(item.Price.ToString());
+                        listItem.SubItems.Add(item.Stock.ToString());
                         listItem.Group = listViewGroup;
                         listView.Items.Add(listItem);
                     }
@@ -163,7 +197,7 @@ namespace ChapeauUI
             listView.View = View.Details;
             listView.Columns.Add("Name");
             listView.Columns.Add("Price");
-            listView.Columns.Add("Quantity");
+            listView.Columns.Add("Stock");
 
             listView.Columns[0].Width = 350;
             listView.Columns[1].Width = 50;
@@ -220,6 +254,7 @@ namespace ChapeauUI
             }
 
             pnlOrderItemList.Controls.Add(flpnlOrderItems);
+            UpdatePlaceOrderButton();
         }
 
         private void OrderItemUserControl_NoteDoubleClick(object sender, EventArgs e)
@@ -284,6 +319,56 @@ namespace ChapeauUI
                 }
             }
         }
+
+        private void btnPlaceOrder_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to place order?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Order order = new Order();
+                order.Table = ClickedTable;
+                order.Employee = Employee.GetInstance();
+                order.Status = OrderStatus.OrderPlaced;
+                order.PlacedTime = DateTime.Now;
+
+                OrderService orderService = new OrderService();
+
+                int orderId = orderService.PlaceOrder(order);
+                order.OrderId = orderId;
+
+                foreach (var item in orderMenuItems)
+                {
+                    MenuItem menuItem = item.Key;
+                    ItemDetails itemDetails = item.Value;
+
+                    OrderItem orderItem = new OrderItem();
+                    orderItem.Order = order;
+                    orderItem.MenuItem = menuItem;
+                    orderItem.Quantity = itemDetails.Quantity;
+                    orderItem.Note = itemDetails.Note;
+                    orderItem.UnitPrice = menuItem.Price;
+
+                    orderService.AddOrderItem(orderItem);
+                }
+
+                MessageBox.Show("Order Placed Successfully!");
+                orderMenuItems.Clear();
+                UpdateOrderItem();
+            }
+        }
+
+        private void btnClearOrder_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to clear order items?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                orderMenuItems.Clear();
+                UpdateOrderItem();
+            }
+
+        }
+
 
         //============================== END ORDER MENU ============================================
 

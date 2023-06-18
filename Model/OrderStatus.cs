@@ -8,6 +8,7 @@ namespace Model
 {
     public enum OrderStatus
     {
+        OrderPlaced,
         OrderReceived,
         OrderProcessing,
         OrderReadyToServe,

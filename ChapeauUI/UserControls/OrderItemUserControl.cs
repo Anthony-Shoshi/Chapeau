@@ -40,7 +40,14 @@ namespace ChapeauUI.UserControls
         public void UpdateData()
         {
             lblMenuItemName.Text = MenuItem.Name;
+
+            ToolTip yourToolTip = new ToolTip();
+            yourToolTip.IsBalloon = true;
+            yourToolTip.ShowAlways = true;
+            yourToolTip.SetToolTip(lblMenuItemName, MenuItem.Name);
+
             lblQnty.Text = ItemDetails.Quantity.ToString();
+
             if (ItemDetails.Note.Equals(""))
             {
                 lblNote.Hide();

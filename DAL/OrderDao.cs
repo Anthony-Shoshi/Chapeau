@@ -5,16 +5,21 @@ namespace DAL
 {
     public class OrderDao : BaseDao
     {
-        public void PlaceOrder(Order order)
+        public int PlaceOrder(Order order)
         {
-            string sqlQuery = "INSERT INTO Orders (Employee_Id, Table_Id, Status, Placed_Time) VALUES (@EmployeeId, @TableId, @Status, @PlacedTime); SELECT SCOPE_IDENTITY();";
-            ExecuteNonQuery(sqlQuery, command =>
+            string insertOrderQuery = "INSERT INTO Orders (Employee_Id, Table_Id, Status, Placed_Time) VALUES (@EmployeeId, @TableId, @Status, @PlacedTime); SELECT SCOPE_IDENTITY();";
+
+            decimal insertedOrderIdDecimal = ExecuteScalar<decimal>(insertOrderQuery, command =>
             {
                 command.Parameters.AddWithValue("@EmployeeId", order.Employee.EmployeeId);
                 command.Parameters.AddWithValue("@TableId", order.Table.TableId);
                 command.Parameters.AddWithValue("@Status", order.Status.ToString());
                 command.Parameters.AddWithValue("@PlacedTime", order.PlacedTime);
             });
+
+            int insertedOrderId = Convert.ToInt32(insertedOrderIdDecimal);
+
+            return insertedOrderId;
         }
 
         public void AddOrderItem(OrderItem orderItem)

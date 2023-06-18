@@ -216,14 +216,19 @@ namespace ChapeauUI
                 ListViewItem selectedItem = listView.SelectedItems[0];
                 MenuItem menuItem = (MenuItem)selectedItem.Tag;
 
-
-                if (orderMenuItems.ContainsKey(menuItem))
+                if (menuItem.Stock > 0)
                 {
-                    orderMenuItems[menuItem].Quantity++;
-                }
-                else
+                    if (orderMenuItems.ContainsKey(menuItem))
+                    {
+                        orderMenuItems[menuItem].Quantity++;
+                    }
+                    else
+                    {
+                        orderMenuItems.Add(menuItem, new ItemDetails { Quantity = 1, Note = "" });
+                    }
+                } else
                 {
-                    orderMenuItems.Add(menuItem, new ItemDetails { Quantity = 1, Note = "" });
+                    MessageBox.Show("Item is out of stock!", "Out of Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
                 UpdateOrderItem();
@@ -292,9 +297,15 @@ namespace ChapeauUI
             MenuItem menuItem = orderItemUserControl.MenuItem;
             ItemDetails itemDetails = orderItemUserControl.ItemDetails;
 
-            itemDetails.Quantity++;
-
-            orderItemUserControl.UpdateData();
+            if (itemDetails.Quantity < menuItem.Stock)
+            {
+                itemDetails.Quantity++;
+                orderItemUserControl.UpdateData();
+            }
+            else
+            {
+                MessageBox.Show("Only " + menuItem.Stock + " item(s) available in stock.", "Insufficient Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void DecrementButton_Click(object sender, EventArgs e)
@@ -333,6 +344,7 @@ namespace ChapeauUI
                 order.PlacedTime = DateTime.Now;
 
                 OrderService orderService = new OrderService();
+                MenuService menuService = new MenuService();
 
                 int orderId = orderService.PlaceOrder(order);
                 order.OrderId = orderId;
@@ -350,10 +362,14 @@ namespace ChapeauUI
                     orderItem.UnitPrice = menuItem.Price;
 
                     orderService.AddOrderItem(orderItem);
+
+                    menuItem.Stock -= itemDetails.Quantity;
+                    menuService.UpdateMenuItem(menuItem);
                 }
 
                 MessageBox.Show("Order Placed Successfully!");
                 orderMenuItems.Clear();
+                LoadMenu();
                 UpdateOrderItem();
             }
         }

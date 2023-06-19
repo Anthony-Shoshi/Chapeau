@@ -45,6 +45,7 @@ namespace ChapeauUI
             tableLayoutPanelTable.Hide();
             pnlMenu.Hide();
             pnlMenuCrud.Hide();
+            panelTableStatus.Hide();
         }
 
         //============================== START TABLE OVERVIEW ============================================
@@ -113,10 +114,14 @@ namespace ChapeauUI
             }
             else if (clickedTable.Table.Status == TableStatus.Occupied)
             {
-
+                ShowTableStatusPanel();
             }
         }
-
+        private void ShowTableStatusPanel()
+        {
+            HidePanels();
+            panelTableStatus.Show();
+        }
         //============================== END TABLE OVERVIEW ============================================
 
         //============================== START ORDER MENU ============================================
@@ -226,7 +231,8 @@ namespace ChapeauUI
                     {
                         orderMenuItems.Add(menuItem, new ItemDetails { Quantity = 1, Note = "" });
                     }
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Item is out of stock!", "Out of Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -691,6 +697,7 @@ namespace ChapeauUI
                 MessageBox.Show("Please select a menu item to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         //============================== END MENU CRUD ============================================
 

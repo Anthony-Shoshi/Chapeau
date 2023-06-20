@@ -11,6 +11,9 @@ namespace ChapeauUI
         bool isAlcoholic;
         private ListView listView;
         private Dictionary<MenuItem, ItemDetails> orderMenuItems = new Dictionary<MenuItem, ItemDetails>();
+        private TableService tableService;
+        private OrderStatus orderStatus;
+        private OrderService orderService;
 
         public WaiterView()
         {
@@ -65,10 +68,17 @@ namespace ChapeauUI
             tableLayoutPanelTable.Show();
             GeneratTable();
         }
+        private void RefreshStatusPanel()
+        {
+            panelTableStatus.Hide();
+            tableLayoutPanelTable.Controls.Clear();
+            tableLayoutPanelTable.Show();
+            GeneratTable();
+        }
 
         private void GeneratTable()
         {
-            TableService tableService = new TableService();
+            tableService = new TableService();
             List<Table> tables = tableService.GetAllTables();
             int columnCount = 5;
             int rowIndex = 0;
@@ -96,7 +106,7 @@ namespace ChapeauUI
 
         private void TableControl_Click(object sender, EventArgs e)
         {
-            TableService service = new TableService();
+            tableService = new TableService();
             TableUserControl clickedTable = (TableUserControl)sender;
             ClickedTable = clickedTable.Table;
             if (clickedTable.Table.Status == TableStatus.Available)
@@ -106,7 +116,7 @@ namespace ChapeauUI
                 {
                     lblOrderTable.Text = $"Order - Table {clickedTable.Table.Number}";
                     ShowMenuPanel();
-                    service.UpdateStatus(clickedTable.Table.TableId, TableStatus.Occupied);
+                    tableService.UpdateStatus(clickedTable.Table.TableId, TableStatus.Occupied);
                 }
 
             }
@@ -120,7 +130,67 @@ namespace ChapeauUI
         {
             HidePanels();
             panelTableStatus.Show();
+            DisplayOrderStatus(ClickedTable.TableId);
         }
+        private void buttonFreeTable_Click(object sender, EventArgs e)
+        {
+            tableService = new TableService();
+
+            TableUserControl selectedTable = new TableUserControl(ClickedTable);
+            if (selectedTable.Table.Status == TableStatus.Occupied)
+            {
+                DialogResult result = MessageBox.Show("Do you want to free the table?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    lblOrderTable.Text = $"Order - Table {selectedTable.Table.Number}";
+                    tableService.UpdateStatus(selectedTable.Table.TableId, TableStatus.Available);
+                    RefreshStatusPanel();
+                }
+            }
+        }
+        public void DisplayOrderStatus(int TableId)
+        {
+            orderService = new OrderService();
+            List<Order> orders = orderService.GetOrderByStatus(TableId);
+            listViewOrderStatus.Items.Clear();
+            foreach (Order order in orders)
+            {
+
+                ListViewItem item = new ListViewItem($"{order.OrderId}");
+                item.SubItems.Add(orderStatus.ToString());
+                item.SubItems.Add(order.FormattedWaitingTime.ToString());
+                item.Tag = order;
+                listViewOrderStatus.Items.Add(item);
+
+            }
+        }
+
+        private void ServeButton_Click(object sender, EventArgs e)
+        {
+            int tableId = ClickedTable.TableId;
+
+            if (listViewOrderStatus.SelectedItems.Count > 0)
+            {
+                Order SelectedOrder = (Order)listViewOrderStatus.SelectedItems[0].Tag;
+                if (SelectedOrder.Status == OrderStatus.OrderReadyToServe)
+                {
+                    orderService.UpdateOrderStatus(SelectedOrder.OrderId, OrderStatus.OrderCompleted);
+                    MessageBox.Show("The order has been served.", "Order Served", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DisplayOrderStatus(tableId);
+                }
+                else
+                {
+                    MessageBox.Show("The order is not yet ready to serve.", "Order Not Ready", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+
+        }
+        private void buttonAddOrder_Click(object sender, EventArgs e)
+        {
+            ShowMenuPanel();
+        }
+
 
         //============================== END TABLE OVERVIEW ============================================
 
@@ -390,6 +460,7 @@ namespace ChapeauUI
             }
 
         }
+
 
 
         //============================== END ORDER MENU ============================================
@@ -697,6 +768,8 @@ namespace ChapeauUI
                 MessageBox.Show("Please select a menu item to update.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
 
 
         //============================== END MENU CRUD ============================================

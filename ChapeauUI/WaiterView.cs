@@ -68,6 +68,7 @@ namespace ChapeauUI
             tableLayoutPanelTable.Show();
             GeneratTable();
         }
+
         private void RefreshStatusPanel()
         {
             panelTableStatus.Hide();
@@ -106,23 +107,29 @@ namespace ChapeauUI
 
         private void TableControl_Click(object sender, EventArgs e)
         {
-            tableService = new TableService();
-            TableUserControl clickedTable = (TableUserControl)sender;
-            ClickedTable = clickedTable.Table;
-            if (clickedTable.Table.Status == TableStatus.Available)
+            try
             {
-                DialogResult result = MessageBox.Show("Do you want to occupy the table?", "Confirmation", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                tableService = new TableService();
+                TableUserControl clickedTable = (TableUserControl)sender;
+                ClickedTable = clickedTable.Table;
+                if (clickedTable.Table.Status == TableStatus.Available)
                 {
-                    lblOrderTable.Text = $"Order - Table {clickedTable.Table.Number}";
-                    ShowMenuPanel();
-                    tableService.UpdateStatus(clickedTable.Table.TableId, TableStatus.Occupied);
+                    DialogResult result = MessageBox.Show("Do you want to occupy the table?", "Confirmation", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        lblOrderTable.Text = $"Order - Table {clickedTable.Table.Number}";
+                        ShowMenuPanel();
+                        tableService.UpdateStatus(clickedTable.Table.TableId, TableStatus.Occupied);
+                    }
                 }
-
+                else if (clickedTable.Table.Status == TableStatus.Occupied)
+                {
+                    ShowTableStatusPanel();
+                }
             }
-            else if (clickedTable.Table.Status == TableStatus.Occupied)
+            catch (Exception ex)
             {
-                ShowTableStatusPanel();
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -132,62 +139,86 @@ namespace ChapeauUI
             panelTableStatus.Show();
             DisplayOrderStatus(ClickedTable.TableId);
         }
+
         private void buttonFreeTable_Click(object sender, EventArgs e)
         {
-            tableService = new TableService();
-
-            TableUserControl selectedTable = new TableUserControl(ClickedTable);
-            if (selectedTable.Table.Status == TableStatus.Occupied)
+            try
             {
-                DialogResult result = MessageBox.Show("Do you want to free the table?", "Confirmation", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                tableService = new TableService();
+
+                TableUserControl selectedTable = new TableUserControl(ClickedTable);
+                if (selectedTable.Table.Status == TableStatus.Occupied)
                 {
-                    lblOrderTable.Text = $"Order - Table {selectedTable.Table.Number}";
-                    tableService.UpdateStatus(selectedTable.Table.TableId, TableStatus.Available);
-                    RefreshStatusPanel();
+                    DialogResult result = MessageBox.Show("Do you want to free the table?", "Confirmation", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        lblOrderTable.Text = $"Order - Table {selectedTable.Table.Number}";
+                        tableService.UpdateStatus(selectedTable.Table.TableId, TableStatus.Available);
+                        RefreshStatusPanel();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         public void DisplayOrderStatus(int TableId)
         {
-            orderService = new OrderService();
-            List<Order> orders = orderService.GetOrderByStatus(TableId);
-            listViewOrderStatus.Items.Clear();
-            foreach (Order order in orders)
+            try
             {
+                orderService = new OrderService();
+                List<Order> orders = orderService.GetOrderByStatus(TableId);
+                listViewOrderStatus.Items.Clear();
+                foreach (Order order in orders)
+                {
 
-                ListViewItem item = new ListViewItem($"{order.OrderId}");
-                item.SubItems.Add(orderStatus.ToString());
-                item.SubItems.Add(order.FormattedWaitingTime.ToString());
-                item.Tag = order;
-                listViewOrderStatus.Items.Add(item);
+                    ListViewItem item = new ListViewItem($"{order.OrderId}");
+                    item.SubItems.Add(orderStatus.ToString());
+                    item.SubItems.Add(order.FormattedWaitingTime.ToString());
+                    item.Tag = order;
+                    listViewOrderStatus.Items.Add(item);
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void ServeButton_Click(object sender, EventArgs e)
         {
-            int tableId = ClickedTable.TableId;
-
-            if (listViewOrderStatus.SelectedItems.Count > 0)
+            try
             {
-                Order SelectedOrder = (Order)listViewOrderStatus.SelectedItems[0].Tag;
-                if (SelectedOrder.Status == OrderStatus.OrderReadyToServe)
+                int tableId = ClickedTable.TableId;
+
+                if (listViewOrderStatus.SelectedItems.Count > 0)
                 {
-                    orderService.UpdateOrderStatus(SelectedOrder.OrderId, OrderStatus.OrderCompleted);
-                    MessageBox.Show("The order has been served.", "Order Served", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DisplayOrderStatus(tableId);
-                }
-                else
-                {
-                    MessageBox.Show("The order is not yet ready to serve.", "Order Not Ready", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Order SelectedOrder = (Order)listViewOrderStatus.SelectedItems[0].Tag;
+                    if (SelectedOrder.Status == OrderStatus.OrderReadyToServe)
+                    {
+                        orderService.UpdateOrderStatus(SelectedOrder.OrderId, OrderStatus.OrderCompleted);
+                        MessageBox.Show("The order has been served.", "Order Served", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DisplayOrderStatus(tableId);
+                    }
+                    else
+                    {
+                        MessageBox.Show("The order is not yet ready to serve.", "Order Not Ready", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
+
         private void buttonAddOrder_Click(object sender, EventArgs e)
         {
+            lblOrderTable.Text = $"Order - Table {ClickedTable.Number}";
             ShowMenuPanel();
         }
 
@@ -220,49 +251,54 @@ namespace ChapeauUI
 
         private void LoadMenu()
         {
-            MenuService menuService = new MenuService();
-            List<MenuCategory> categories = menuService.GetAllMenuCategories();
-
-            tabControlMenu.TabPages.Clear();
-
-            foreach (MenuCategory category in categories)
+            try
             {
-                TabPage tabPage = new TabPage(category.CategoryName);
-                tabPage.Tag = category.CategoryId;
+                MenuService menuService = new MenuService();
+                List<MenuCategory> categories = menuService.GetAllMenuCategories();
 
-                List<MenuItem> items = menuService.GetMenuItemsByCategoryId(category.CategoryId);
+                tabControlMenu.TabPages.Clear();
 
-                ListView listView = AddMenuItemList();
-
-                listView.Items.Clear();
-
-                listView.Items.Clear();
-
-                var menuTypeGroups = items.GroupBy(item => item.MenuType);
-
-                foreach (var group in menuTypeGroups)
+                foreach (MenuCategory category in categories)
                 {
-                    ListViewGroup listViewGroup = new ListViewGroup(group.Key.ToString());
-                    listView.Groups.Add(listViewGroup);
+                    TabPage tabPage = new TabPage(category.CategoryName);
+                    tabPage.Tag = category.CategoryId;
 
-                    foreach (MenuItem item in group)
+                    List<MenuItem> items = menuService.GetMenuItemsByCategoryId(category.CategoryId);
+
+                    ListView listView = AddMenuItemList();
+
+                    listView.Items.Clear();
+
+                    var menuTypeGroups = items.GroupBy(item => item.MenuType);
+
+                    foreach (var group in menuTypeGroups)
                     {
-                        ListViewItem listItem = new ListViewItem(item.Name);
-                        listItem.Tag = item;
-                        listItem.SubItems.Add(item.Price.ToString());
-                        listItem.SubItems.Add(item.Stock.ToString());
-                        listItem.Group = listViewGroup;
-                        listView.Items.Add(listItem);
+                        ListViewGroup listViewGroup = new ListViewGroup(group.Key.ToString());
+                        listView.Groups.Add(listViewGroup);
+
+                        foreach (MenuItem item in group)
+                        {
+                            ListViewItem listItem = new ListViewItem(item.Name);
+                            listItem.Tag = item;
+                            listItem.SubItems.Add(item.Price.ToString());
+                            listItem.SubItems.Add(item.Stock.ToString());
+                            listItem.Group = listViewGroup;
+                            listView.Items.Add(listItem);
+                        }
                     }
+
+                    tabPage.Controls.Add(listView);
+                    tabControlMenu.TabPages.Add(tabPage);
                 }
 
-                tabPage.Controls.Add(listView);
-                tabControlMenu.TabPages.Add(tabPage);
+                // default tab
+                if (tabControlMenu.TabPages.Count > 0)
+                    tabControlMenu.SelectedIndex = 0;
             }
-
-            // Select the first tab by default
-            if (tabControlMenu.TabPages.Count > 0)
-                tabControlMenu.SelectedIndex = 0;
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private ListView AddMenuItemList()
@@ -284,126 +320,168 @@ namespace ChapeauUI
 
         private void MenuItemClicked(object sender, EventArgs e)
         {
-            ListView listView = (ListView)sender;
-
-            if (listView.SelectedItems.Count > 0)
+            try
             {
-                ListViewItem selectedItem = listView.SelectedItems[0];
-                MenuItem menuItem = (MenuItem)selectedItem.Tag;
+                ListView listView = (ListView)sender;
 
-                if (menuItem.Stock > 0)
+                if (listView.SelectedItems.Count > 0)
                 {
-                    if (orderMenuItems.ContainsKey(menuItem))
+                    ListViewItem selectedItem = listView.SelectedItems[0];
+                    MenuItem menuItem = (MenuItem)selectedItem.Tag;
+
+                    if (menuItem.Stock > 0)
                     {
-                        orderMenuItems[menuItem].Quantity++;
+                        if (orderMenuItems.ContainsKey(menuItem))
+                        {
+                            orderMenuItems[menuItem].Quantity++;
+                        }
+                        else
+                        {
+                            orderMenuItems.Add(menuItem, new ItemDetails { Quantity = 1, Note = "" });
+                        }
                     }
                     else
                     {
-                        orderMenuItems.Add(menuItem, new ItemDetails { Quantity = 1, Note = "" });
+                        MessageBox.Show("Item is out of stock!", "Out of Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Item is out of stock!", "Out of Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
 
-                UpdateOrderItem();
+                    UpdateOrderItem();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void UpdateOrderItem()
         {
-            pnlOrderItemList.Controls.Clear();
-
-            FlowLayoutPanel flpnlOrderItems = new FlowLayoutPanel();
-            flpnlOrderItems.Dock = DockStyle.Fill;
-            flpnlOrderItems.FlowDirection = FlowDirection.TopDown;
-            flpnlOrderItems.AutoScroll = true;
-            flpnlOrderItems.WrapContents = false;
-
-            foreach (var item in orderMenuItems)
+            try
             {
-                MenuItem menuItem = item.Key;
-                ItemDetails itemDetails = item.Value;
+                pnlOrderItemList.Controls.Clear();
 
-                OrderItemUserControl orderItemUserControl = new OrderItemUserControl(menuItem, itemDetails);
+                FlowLayoutPanel flpnlOrderItems = new FlowLayoutPanel();
+                flpnlOrderItems.Dock = DockStyle.Fill;
+                flpnlOrderItems.FlowDirection = FlowDirection.TopDown;
+                flpnlOrderItems.AutoScroll = true;
+                flpnlOrderItems.WrapContents = false;
 
-                orderItemUserControl.IncrementButton.Click += IncrementButton_Click;
-                orderItemUserControl.DecrementButton.Click += DecrementButton_Click;
-                orderItemUserControl.NoteDoubleClick += OrderItemUserControl_NoteDoubleClick;
-                flpnlOrderItems.Controls.Add(orderItemUserControl);
+                foreach (var item in orderMenuItems)
+                {
+                    MenuItem menuItem = item.Key;
+                    ItemDetails itemDetails = item.Value;
+
+                    OrderItemUserControl orderItemUserControl = new OrderItemUserControl(menuItem, itemDetails);
+
+                    orderItemUserControl.IncrementButton.Click += IncrementButton_Click;
+                    orderItemUserControl.DecrementButton.Click += DecrementButton_Click;
+                    orderItemUserControl.NoteDoubleClick += OrderItemUserControl_NoteDoubleClick;
+                    flpnlOrderItems.Controls.Add(orderItemUserControl);
+                }
+
+                pnlOrderItemList.Controls.Add(flpnlOrderItems);
+                UpdatePlaceOrderButton();
             }
-
-            pnlOrderItemList.Controls.Add(flpnlOrderItems);
-            UpdatePlaceOrderButton();
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void OrderItemUserControl_NoteDoubleClick(object sender, EventArgs e)
         {
-            OrderItemUserControl orderItemUserControl = (OrderItemUserControl)sender;
-            MenuItem menuItem = orderItemUserControl.MenuItem;
+            try
+            {
+                OrderItemUserControl orderItemUserControl = (OrderItemUserControl)sender;
+                MenuItem menuItem = orderItemUserControl.MenuItem;
 
-            MenuItemNote menuItemNote = new MenuItemNote(menuItem);
-            menuItemNote.NoteText = orderItemUserControl.ItemDetails.Note;
-            menuItemNote.SaveButtonClicked += MenuItemNote_SaveButtonClicked;
-            menuItemNote.Show();
+                MenuItemNote menuItemNote = new MenuItemNote(menuItem);
+                menuItemNote.NoteText = orderItemUserControl.ItemDetails.Note;
+                menuItemNote.SaveButtonClicked += MenuItemNote_SaveButtonClicked;
+                menuItemNote.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void MenuItemNote_SaveButtonClicked(object sender, string note)
         {
-            MenuItemNote menuItemNote = (MenuItemNote)sender;
-            MenuItem menuItem = menuItemNote.MenuItem;
-
-            if (orderMenuItems.ContainsKey(menuItem))
+            try
             {
-                orderMenuItems[menuItem].Note = note;
-            }
-            else
-            {
-                orderMenuItems[menuItem].Note = "";
-            }
+                MenuItemNote menuItemNote = (MenuItemNote)sender;
+                MenuItem menuItem = menuItemNote.MenuItem;
 
-            UpdateOrderItem();
+                if (orderMenuItems.ContainsKey(menuItem))
+                {
+                    orderMenuItems[menuItem].Note = note;
+                }
+                else
+                {
+                    orderMenuItems[menuItem].Note = "";
+                }
+
+                UpdateOrderItem();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void IncrementButton_Click(object sender, EventArgs e)
         {
-            OrderItemUserControl orderItemUserControl = (OrderItemUserControl)((Button)sender).Parent;
-
-            MenuItem menuItem = orderItemUserControl.MenuItem;
-            ItemDetails itemDetails = orderItemUserControl.ItemDetails;
-
-            if (itemDetails.Quantity < menuItem.Stock)
+            try
             {
-                itemDetails.Quantity++;
-                orderItemUserControl.UpdateData();
+                OrderItemUserControl orderItemUserControl = (OrderItemUserControl)((Button)sender).Parent;
+
+                MenuItem menuItem = orderItemUserControl.MenuItem;
+                ItemDetails itemDetails = orderItemUserControl.ItemDetails;
+
+                if (itemDetails.Quantity < menuItem.Stock)
+                {
+                    itemDetails.Quantity++;
+                    orderItemUserControl.UpdateData();
+                }
+                else
+                {
+                    MessageBox.Show("Only " + menuItem.Stock + " item(s) available in stock.", "Insufficient Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Only " + menuItem.Stock + " item(s) available in stock.", "Insufficient Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void DecrementButton_Click(object sender, EventArgs e)
         {
-            OrderItemUserControl orderItemUserControl = (OrderItemUserControl)((Button)sender).Parent;
-
-            MenuItem menuItem = orderItemUserControl.MenuItem;
-            ItemDetails itemDetails = orderItemUserControl.ItemDetails;
-
-            if (itemDetails.Quantity > 0)
+            try
             {
-                itemDetails.Quantity--;
+                OrderItemUserControl orderItemUserControl = (OrderItemUserControl)((Button)sender).Parent;
 
-                if (itemDetails.Quantity == 0)
+                MenuItem menuItem = orderItemUserControl.MenuItem;
+                ItemDetails itemDetails = orderItemUserControl.ItemDetails;
+
+                if (itemDetails.Quantity > 0)
                 {
-                    orderMenuItems.Remove(menuItem);
-                    UpdateOrderItem();
+                    itemDetails.Quantity--;
+
+                    if (itemDetails.Quantity == 0)
+                    {
+                        orderMenuItems.Remove(menuItem);
+                        UpdateOrderItem();
+                    }
+                    else
+                    {
+                        orderItemUserControl.UpdateData();
+                    }
                 }
-                else
-                {
-                    orderItemUserControl.UpdateData();
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -413,40 +491,48 @@ namespace ChapeauUI
 
             if (result == DialogResult.Yes)
             {
-                Order order = new Order();
-                order.Table = ClickedTable;
-                order.Employee = Employee.GetInstance();
-                order.Status = OrderStatus.OrderPlaced;
-                order.PlacedTime = DateTime.Now;
-
-                OrderService orderService = new OrderService();
-                MenuService menuService = new MenuService();
-
-                int orderId = orderService.PlaceOrder(order);
-                order.OrderId = orderId;
-
-                foreach (var item in orderMenuItems)
+                try
                 {
-                    MenuItem menuItem = item.Key;
-                    ItemDetails itemDetails = item.Value;
+                    Order order = new Order();
+                    order.Table = ClickedTable;
+                    order.Employee = Employee.GetInstance();
+                    order.Status = OrderStatus.OrderPlaced;
+                    order.PlacedTime = DateTime.Now;
 
-                    OrderItem orderItem = new OrderItem();
-                    orderItem.Order = order;
-                    orderItem.MenuItem = menuItem;
-                    orderItem.Quantity = itemDetails.Quantity;
-                    orderItem.Note = itemDetails.Note;
-                    orderItem.UnitPrice = menuItem.Price;
+                    OrderService orderService = new OrderService();
+                    MenuService menuService = new MenuService();
 
-                    orderService.AddOrderItem(orderItem);
+                    int orderId = orderService.PlaceOrder(order);
+                    order.OrderId = orderId;
 
-                    menuItem.Stock -= itemDetails.Quantity;
-                    menuService.UpdateMenuItem(menuItem);
+                    foreach (var item in orderMenuItems)
+                    {
+                        MenuItem menuItem = item.Key;
+                        ItemDetails itemDetails = item.Value;
+
+                        OrderItem orderItem = new OrderItem();
+                        orderItem.Order = order;
+                        orderItem.MenuItem = menuItem;
+                        orderItem.Quantity = itemDetails.Quantity;
+                        orderItem.Note = itemDetails.Note;
+                        orderItem.UnitPrice = menuItem.Price;
+
+                        orderService.AddOrderItem(orderItem);
+
+                        menuItem.Stock -= itemDetails.Quantity;
+                        menuService.UpdateMenuItem(menuItem);
+                    }
+
+                    MessageBox.Show("Order Placed Successfully!");
+                    orderMenuItems.Clear();
+                    LoadMenu();
+                    UpdateOrderItem();
+
                 }
-
-                MessageBox.Show("Order Placed Successfully!");
-                orderMenuItems.Clear();
-                LoadMenu();
-                UpdateOrderItem();
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -455,8 +541,15 @@ namespace ChapeauUI
             DialogResult result = MessageBox.Show("Are you sure you want to clear order items?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                orderMenuItems.Clear();
-                UpdateOrderItem();
+                try
+                {
+                    orderMenuItems.Clear();
+                    UpdateOrderItem();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}! Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
@@ -769,7 +862,7 @@ namespace ChapeauUI
             }
         }
 
-       
+
 
 
         //============================== END MENU CRUD ============================================

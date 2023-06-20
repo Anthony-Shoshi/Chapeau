@@ -43,6 +43,19 @@ namespace DAL
                 command.Parameters.AddWithValue("@NewStatus", newStatus.ToString());
                 command.Parameters.AddWithValue("@TableId", tableId);
             });
+
+            UpdateOrderStatus(tableId);
+        }
+        
+        private void UpdateOrderStatus(int tableId)
+        {
+            string updateOrderQuery = "UPDATE Orders SET Status = @NewStatus WHERE Table_Id = @tableId";
+
+            ExecuteNonQuery(updateOrderQuery, command =>
+            {
+                command.Parameters.AddWithValue("@NewStatus", OrderStatus.OrderCompleted.ToString());
+                command.Parameters.AddWithValue("@tableId", tableId);
+            });
         }
     }
 }

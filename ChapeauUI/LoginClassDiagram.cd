@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ChapeauUI.ChapeauLogin">
+    <Position X="2" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggAAAAQACAAAAAAAACAAIACAAgACAAABAAAAABAAAA=</HashCode>
+      <FileName>ChapeauLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.AuthDao">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Model.Employee">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="UserType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Model.UserType" Collapsed="true">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Service.AuthService">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -56,7 +56,6 @@ namespace ChapeauUI
             tableLayoutPanelTable.Controls.Clear();
             tableLayoutPanelTable.Show();
             GeneratTable();
-
         }
 
         private void lblTableMenu_Click(object sender, EventArgs e)
@@ -65,7 +64,6 @@ namespace ChapeauUI
             tableLayoutPanelTable.Controls.Clear();
             tableLayoutPanelTable.Show();
             GeneratTable();
-
         }
 
         private void GeneratTable()
@@ -117,11 +115,13 @@ namespace ChapeauUI
                 ShowTableStatusPanel();
             }
         }
+
         private void ShowTableStatusPanel()
         {
             HidePanels();
             panelTableStatus.Show();
         }
+
         //============================== END TABLE OVERVIEW ============================================
 
         //============================== START ORDER MENU ============================================

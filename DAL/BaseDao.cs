@@ -54,7 +54,7 @@ namespace DAL
                 CloseConnection();
             }
         }
-        
+
         protected SqlDataReader ExecuteReader(string sqlQuery, Action<SqlCommand> parameterSetter = null)
         {
             SqlCommand command = new SqlCommand(sqlQuery, sqlConnection);

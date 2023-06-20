@@ -107,5 +107,39 @@ namespace DAL
                 command.Parameters.AddWithValue("@OrderItemId", orderItemId);
             });
         }
+        public List<Order> GetORderByStatus(int TableID)
+        {
+            List<Order> orders = new List<Order>();
+            string query = "SELECT Order_Id, Status, Placed_Time FROM Orders WHERE Status != @Status AND Table_Id = @TableID";
+            try
+            {
+
+                SqlDataReader reader = ExecuteReader(query, command =>
+                {
+                    command.Parameters.AddWithValue("@Status", OrderStatus.OrderCompleted.ToString());
+                    command.Parameters.AddWithValue("@TableID", TableID);
+                });
+                while (reader.Read())
+                {
+                    Order order = new Order
+                    {
+                        OrderId = Convert.ToInt32(reader["Order_Id"]),
+                        Status = (OrderStatus)Enum.Parse(typeof(OrderStatus), reader["Status"].ToString()),
+                        PlacedTime = Convert.ToDateTime(reader["Placed_Time"]),
+                        Employee = Employee.GetInstance(),
+                        Table = new Table(),
+                        OrderItems = new List<OrderItem>(),
+                    };
+
+                    orders.Add(order);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while retrieving orders by status: {ex.Message}");
+            }
+            return orders;
+        }
     }
 }

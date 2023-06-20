@@ -14,5 +14,21 @@ namespace Model
         public OrderStatus Status { get; set; }
         public DateTime PlacedTime { get; set; }
         public List<OrderItem> OrderItems { get; set; }
+        public TimeSpan WaitingTime
+        {
+            get
+            {
+                TimeSpan waitingTime = PlacedTime - DateTime.Now;
+                return waitingTime.Duration();
+            }
+        }
+        public string FormattedWaitingTime
+        {
+            get
+            {
+                TimeSpan waitingTime = WaitingTime;
+                return $"{(int)waitingTime.TotalMinutes} min {(int)waitingTime.Seconds} sec";
+            }
+        }
     }
 }

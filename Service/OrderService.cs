@@ -46,5 +46,9 @@ namespace Service
         {
             orderDao.DeleteOrderItem(orderItemId);
         }
+        public List<Order> GetOrderByStatus(int TableID)
+        {
+            return orderDao.GetORderByStatus(TableID);
+        }
     }
 }

@@ -179,6 +179,17 @@ namespace DAL
             });
         }
 
+        public void UpdateOrderItemStatus(int orderId, int menuId, OrderItemStatus status)
+        {
+            string sqlQuery = "UPDATE [Order_Item] SET Status = @Status WHERE Order_Id = @OrderId AND [Menu_Id] = @MenuId";
+            ExecuteNonQuery(sqlQuery, command =>
+            {
+                command.Parameters.AddWithValue("@OrderId", orderId);
+                command.Parameters.AddWithValue("@MenuId", menuId);
+                command.Parameters.AddWithValue("@Status", status.ToString());
+            });
+        }
+
         public void UpdateOrderItem(OrderItem orderItem)
         {
             string sqlQuery = "UPDATE Order_Item SET Quantity = @Quantity, Note = @Note, Unit_Price = @UnitPrice WHERE Order_Item_Id = @OrderItemId";

@@ -40,6 +40,10 @@ namespace Service
         {
             orderDao.UpdateOrderStatus(orderId, status);
         }
+        public void UpdateOrderItemStatus(int orderId, int menuId, OrderItemStatus status)
+        {
+            orderDao.UpdateOrderItemStatus(orderId, menuId, status);
+        }
 
         public void UpdateOrderItem(OrderItem orderItem)
         {

@@ -31,6 +31,10 @@ namespace Service
         {
             return orderDao.GetOrderItemsByOrderId(orderId);
         }
+        public List<Order> GetOrders()
+        {
+            return orderDao.GetAllOrders();
+        }
 
         public void UpdateOrderStatus(int orderId, OrderStatus status)
         {

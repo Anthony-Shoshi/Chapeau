@@ -46,7 +46,7 @@ namespace ChapeauUI
             this.Hide();
             Form home;
             UserType userType = Employee.GetInstance().UserType;
-            home = (userType == UserType.Waiter) ? new WaiterView() : new ChefBartenderView();
+            home = (userType == UserType.Waiter) ? new WaiterView() : new KitchenView();
             home.Closed += (s, args) => this.Close();
             home.Show();
         }
@@ -62,6 +62,11 @@ namespace ChapeauUI
             {
                 return true;
             }
+        }
+
+        private void ChapeauLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

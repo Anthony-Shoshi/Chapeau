@@ -19,6 +19,7 @@ namespace ChapeauUI.Components
         private int priority;
         private TimeSpan waitTime;
         private OrderService orderService;
+        private Employee emp;
         private IDictionary<string, List<OrderItem>> itemByCategory = new Dictionary<string, List<OrderItem>>();
 
         public KitchenWidgets()
@@ -51,29 +52,33 @@ namespace ChapeauUI.Components
         }
 
 
-        public void GetOrder(Order order, int priority)
+        public void GetOrder(Order order, int priority, Employee emp, IDictionary<string, List<OrderItem>> itemByCategory)
         {
             this.order = order;
             this.priority = priority;
             this.waitTime = order.WaitingTime;
+            this.emp = emp;
+            this.itemByCategory = itemByCategory;
 
-            priorityLabel.Text = $"{order.OrderId} {priority}";
+            priorityLabel.Text = $"{priority}";
             waitingTimeLabel.Text = order.Status == OrderStatus.OrderCompleted ? "-" : this.waitTime.ToString(@"dd\:hh\:mm\:ss");
 
             tableNumberLabel.Text = order.Table.Number.ToString();
             orderTimeLabel.Text = order.PlacedTime.ToString("T");
 
-            foreach (OrderItem item in order.OrderItems)
-            {
-                if (itemByCategory.ContainsKey(item.MenuItem.MenuType))
-                {
-                    itemByCategory[item.MenuItem.MenuType].Add(item);
-                }
-                else
-                {
-                    itemByCategory[item.MenuItem.MenuType] = new List<OrderItem>() { item };
-                }
-            }
+            //foreach (OrderItem item in order.OrderItems)
+            //{
+            //    //if (emp.UserType == UserType.Bartender && item.MenuItem.Category.CategoryName != "Drinks") continue;
+            //    //else if (emp.UserType == UserType.Chef && item.MenuItem.Category.CategoryName == "Drinks") continue;
+            //    if (itemByCategory.ContainsKey(item.MenuItem.MenuType))
+            //    {
+            //        itemByCategory[item.MenuItem.MenuType].Add(item);
+            //    }
+            //    else
+            //    {
+            //        itemByCategory[item.MenuItem.MenuType] = new List<OrderItem>() { item };
+            //    }
+            //}
             DisplayOrderItems();
         }
 

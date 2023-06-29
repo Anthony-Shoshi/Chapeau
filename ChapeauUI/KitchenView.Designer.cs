@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             mainPanel = new Panel();
+            noNewOrdersLabel = new Label();
             headerPanel = new Panel();
+            refreshButton = new Button();
             label2 = new Label();
             userNameLabel = new Label();
             viewTypeLabel = new Label();
             label1 = new Label();
             orderTypeCombo = new ComboBox();
+            mainPanel.SuspendLayout();
             headerPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,13 +46,27 @@
             mainPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.AutoScroll = true;
             mainPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainPanel.Controls.Add(noNewOrdersLabel);
             mainPanel.Location = new Point(5, 94);
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(1056, 459);
             mainPanel.TabIndex = 0;
             // 
+            // noNewOrdersLabel
+            // 
+            noNewOrdersLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            noNewOrdersLabel.AutoSize = true;
+            noNewOrdersLabel.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point);
+            noNewOrdersLabel.Location = new Point(373, 182);
+            noNewOrdersLabel.Name = "noNewOrdersLabel";
+            noNewOrdersLabel.Size = new Size(317, 54);
+            noNewOrdersLabel.TabIndex = 6;
+            noNewOrdersLabel.Text = "No new Orders.";
+            noNewOrdersLabel.Visible = false;
+            // 
             // headerPanel
             // 
+            headerPanel.Controls.Add(refreshButton);
             headerPanel.Controls.Add(label2);
             headerPanel.Controls.Add(userNameLabel);
             headerPanel.Controls.Add(viewTypeLabel);
@@ -60,6 +77,16 @@
             headerPanel.Name = "headerPanel";
             headerPanel.Size = new Size(1061, 80);
             headerPanel.TabIndex = 1;
+            // 
+            // refreshButton
+            // 
+            refreshButton.Location = new Point(269, 43);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(75, 23);
+            refreshButton.TabIndex = 5;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = true;
+            refreshButton.Click += refreshButton_Click;
             // 
             // label2
             // 
@@ -117,6 +144,8 @@
             Name = "KitchenView";
             Text = "KitchenView";
             Load += KitchenView_Load;
+            mainPanel.ResumeLayout(false);
+            mainPanel.PerformLayout();
             headerPanel.ResumeLayout(false);
             headerPanel.PerformLayout();
             ResumeLayout(false);
@@ -131,5 +160,7 @@
         private Label viewTypeLabel;
         private Label userNameLabel;
         private Label label2;
+        private Button refreshButton;
+        private Label noNewOrdersLabel;
     }
 }

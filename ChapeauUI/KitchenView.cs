@@ -18,6 +18,7 @@ namespace ChapeauUI
         private Employee currEmp;
         private List<KitchenWidgets> wids;
         private OrderService orderService;
+
         public KitchenView()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace ChapeauUI
             SetEmployeeInfo();
             SetOrderTypeCombo();
             SetOrders();
+
         }
 
         private void SetEmployeeInfo()
@@ -49,6 +51,23 @@ namespace ChapeauUI
                 else if (orderTypeCombo.Text == "Placed orders") return o.Status == OrderStatus.OrderPlaced || o.Status == OrderStatus.OrderReceived;
                 return true;
             }).OrderByDescending(o => o.WaitingTime).ToList();
+            mainPanel.Controls.Clear();
+            if (orderTypeCombo.Text == "Placed orders" && orders.Count == 0)
+            {
+                Label noNewOrderLabel = new Label()
+                {
+                    Text = "No new Orders.",
+                    Visible = true,
+                    Location = new Point(373, 182),
+                    Anchor = AnchorStyles.Left | AnchorStyles.Right,
+                    AutoSize = true,
+                    Font = new Font("Segoe UI", 30, FontStyle.Bold, GraphicsUnit.Point)
+                };
+
+                mainPanel.Controls.Add(noNewOrderLabel);
+
+                return;
+            }
             mainPanel.Controls.Clear();
             foreach (Order order in orders)
             {
@@ -92,7 +111,7 @@ namespace ChapeauUI
             orderTypeCombo.Items.Add("Placed orders");
             orderTypeCombo.Items.Add("Completed orders");
 
-            orderTypeCombo.Text = "All orders";
+            orderTypeCombo.Text = "Placed orders";
         }
 
         private void orderTypeCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,5 +119,10 @@ namespace ChapeauUI
             SetOrders();
         }
 
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            SetOrders();
+        }
     }
 }

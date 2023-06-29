@@ -60,6 +60,14 @@ namespace ChapeauUI.Components
             this.emp = emp;
             this.itemByCategory = itemByCategory;
 
+            if (order.Status == OrderStatus.OrderCompleted)
+            {
+                labWaitingTime.Visible = false;
+                waitingTimeLabel.Visible = false;
+                labBarmanName.Visible = false;
+                labwaitername.Visible = false;
+            }
+
             priorityLabel.Text = $"{priority}";
             waitingTimeLabel.Text = order.Status == OrderStatus.OrderCompleted ? "-" : this.waitTime.ToString(@"dd\:hh\:mm\:ss");
 
@@ -85,6 +93,7 @@ namespace ChapeauUI.Components
         public void DisplayOrderItems()
         {
             panelButtom.AutoScroll = true;
+            panelButtom.HorizontalScroll.Visible = false;
             int count = 0;
             foreach (KeyValuePair<string, List<OrderItem>> kvp in itemByCategory)
             {

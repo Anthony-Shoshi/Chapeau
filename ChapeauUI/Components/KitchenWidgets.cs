@@ -10,22 +10,27 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ChapeauUI.Components.KitchenWidgets;
 
 namespace ChapeauUI.Components
 {
     public partial class KitchenWidgets : UserControl
     {
         private Order order;
-        private int priority;
+        bool compleatedOrReady;
         private TimeSpan waitTime;
         private KitchenService kitchenService;
-        private Employee emp;
+        private Employee currEmp;
         private IDictionary<string, List<OrderItem>> itemByCategory = new Dictionary<string, List<OrderItem>>();
-
+        public delegate void ChangeOrderStatus(int orderId, OrderStatus status);
+        public delegate void RefreshPage();
+        private RefreshPage RefreshPageFunc;
+        private ChangeOrderStatus ChangeOrderStatusFunc;
         public KitchenWidgets()
         {
             InitializeComponent();
             kitchenService = new KitchenService();
+            currEmp = Employee.GetInstance();
             timer1.Tick += new EventHandler(IncrementWaitTimeTimer);
             timer1.Interval = 1000;
             timer1.Enabled = true;
@@ -35,11 +40,11 @@ namespace ChapeauUI.Components
         private void IncrementWaitTimeTimer(Object myObject,
                                          EventArgs myEventArgs)
         {
-            if (order != null && order.Status != OrderStatus.OrderCompleted)
+            if (order != null && order.Status != OrderStatus.OrderCompleted || order.Status != OrderStatus.OrderReadyToServe)
             {
                 this.waitTime = this.waitTime.Add(TimeSpan.FromSeconds(1));
                 waitingTimeLabel.Text = this.waitTime.ToString(@"hh\:mm\:ss");
-                if (order.Status == OrderStatus.OrderCompleted) timer1.Stop();
+                if (order.Status == OrderStatus.OrderCompleted || order.Status == OrderStatus.OrderReadyToServe) timer1.Stop();
             }
             else timer1.Stop();
         }
@@ -52,15 +57,15 @@ namespace ChapeauUI.Components
         }
 
 
-        public void GetOrder(Order order, int priority, Employee emp, IDictionary<string, List<OrderItem>> itemByCategory)
+        public void GetOrder(Order order, int priority, IDictionary<string, List<OrderItem>> itemByCategory, ChangeOrderStatus changeOrderStatus, RefreshPage refreshPage)
         {
             this.order = order;
-            this.priority = priority;
             this.waitTime = order.WaitingTime;
-            this.emp = emp;
             this.itemByCategory = itemByCategory;
-
-            if (order.Status == OrderStatus.OrderCompleted)
+            this.ChangeOrderStatusFunc = new ChangeOrderStatus(changeOrderStatus);
+            this.RefreshPageFunc = refreshPage;
+            this.compleatedOrReady = order.Status == OrderStatus.OrderCompleted || order.Status == OrderStatus.OrderReadyToServe;
+            if (compleatedOrReady)
             {
                 labWaitingTime.Visible = false;
                 waitingTimeLabel.Visible = false;
@@ -69,24 +74,18 @@ namespace ChapeauUI.Components
             }
 
             priorityLabel.Text = $"{priority}";
-            waitingTimeLabel.Text = order.Status == OrderStatus.OrderCompleted ? "-" : this.waitTime.ToString(@"dd\:hh\:mm\:ss");
+            waitingTimeLabel.Text = compleatedOrReady ? "-" : this.waitTime.ToString(@"dd\:hh\:mm\:ss");
+            btnUpdate.Enabled = order.OrderItems.Where(item =>
+            {
+                if (currEmp.UserType == UserType.Bartender) return item.MenuItem.Category.CategoryName == "Drinks" && item.Status != OrderItemStatus.Ready;
+                if (currEmp.UserType == UserType.Chef) return item.MenuItem.Category.CategoryName != "Drinks" && item.Status != OrderItemStatus.Ready;
+                return true;
+             }).Any();
+            //btnUpdate.Enabled = order.Status != OrderStatus.OrderCompleted && order.Status != OrderStatus.OrderReadyToServe;
+            btnUpdate.BackColor = btnUpdate.Enabled ? SystemColors.HotTrack : Color.Gray;
 
             tableNumberLabel.Text = order.Table.Number.ToString();
             orderTimeLabel.Text = order.PlacedTime.ToString("T");
-
-            //foreach (OrderItem item in order.OrderItems)
-            //{
-            //    //if (emp.UserType == UserType.Bartender && item.MenuItem.Category.CategoryName != "Drinks") continue;
-            //    //else if (emp.UserType == UserType.Chef && item.MenuItem.Category.CategoryName == "Drinks") continue;
-            //    if (itemByCategory.ContainsKey(item.MenuItem.MenuType))
-            //    {
-            //        itemByCategory[item.MenuItem.MenuType].Add(item);
-            //    }
-            //    else
-            //    {
-            //        itemByCategory[item.MenuItem.MenuType] = new List<OrderItem>() { item };
-            //    }
-            //}
             DisplayOrderItems();
         }
 
@@ -95,7 +94,7 @@ namespace ChapeauUI.Components
             panelButtom.AutoScroll = true;
             panelButtom.HorizontalScroll.Visible = false;
             int count = 0;
-            foreach (KeyValuePair<string, List<OrderItem>> kvp in itemByCategory)
+            foreach (KeyValuePair<string, List<OrderItem>> kvp in this.itemByCategory)
             {
                 Label lb = new Label();
                 lb.Text = kvp.Key;
@@ -142,6 +141,7 @@ namespace ChapeauUI.Components
             cb.AutoEllipsis = true;
             cb.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
             cb.Location = new Point(startX, startY);
+            cb.Enabled = orderItem.Status != OrderItemStatus.Ready;
             panelButtom.Controls.Add(cb);
 
             Label noteLabel = new Label
@@ -225,17 +225,26 @@ namespace ChapeauUI.Components
                         case OrderItemStatus.Ordered:
                             kitchenService.UpdateOrderItemStatus(item.Order.OrderId, item.MenuItem.MenuId, OrderItemStatus.BeingPrepared);
                             item.Status = OrderItemStatus.BeingPrepared;
+                            if (order.Status != OrderStatus.OrderProcessing) ChangeOrderStatusFunc(order.OrderId, OrderStatus.OrderProcessing);
                             currItemLabel.Text = "Being Prepared";
                             break;
                         case OrderItemStatus.BeingPrepared:
                             kitchenService.UpdateOrderItemStatus(item.Order.OrderId, item.MenuItem.MenuId, OrderItemStatus.Ready);
                             item.Status = OrderItemStatus.Ready;
+                            if (CheckOrderStatus(OrderItemStatus.Ready)) ChangeOrderStatusFunc(order.OrderId,OrderStatus.OrderReadyToServe);
                             currItemLabel.Text = "Ready";
+                            this.RefreshPageFunc();
                             break;
                     }
                     control.Checked = false;
                 }
             }
         }
+
+        private bool CheckOrderStatus(OrderItemStatus status)
+        {
+            return order.OrderItems.Where(item => item.Status != status).Count() == 0;
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Windows.Forms;
+﻿    using System.Windows.Forms;
 using ChapeauUI.UserControls;
 using Model;
 using Service;
@@ -175,7 +175,7 @@ namespace ChapeauUI
                 {
 
                     ListViewItem item = new ListViewItem($"{order.OrderId}");
-                    item.SubItems.Add(orderStatus.ToString());
+                    item.SubItems.Add(order.Status.ToString());
                     item.SubItems.Add(order.FormattedWaitingTime.ToString());
                     item.Tag = order;
                     listViewOrderStatus.Items.Add(item);

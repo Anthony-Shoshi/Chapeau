@@ -30,6 +30,10 @@
         {
             mainPanel = new Panel();
             headerPanel = new Panel();
+            refreshButton = new Button();
+            label2 = new Label();
+            userNameLabel = new Label();
+            viewTypeLabel = new Label();
             label1 = new Label();
             orderTypeCombo = new ComboBox();
             headerPanel.SuspendLayout();
@@ -40,26 +44,67 @@
             mainPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.AutoScroll = true;
             mainPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            mainPanel.Location = new Point(5, 66);
+            mainPanel.Location = new Point(5, 94);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(1056, 487);
+            mainPanel.Size = new Size(1056, 459);
             mainPanel.TabIndex = 0;
-            mainPanel.Paint += mainPanel_Paint;
             // 
             // headerPanel
             // 
+            headerPanel.Controls.Add(refreshButton);
+            headerPanel.Controls.Add(label2);
+            headerPanel.Controls.Add(userNameLabel);
+            headerPanel.Controls.Add(viewTypeLabel);
             headerPanel.Controls.Add(label1);
             headerPanel.Controls.Add(orderTypeCombo);
             headerPanel.Dock = DockStyle.Top;
             headerPanel.Location = new Point(0, 0);
             headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(1061, 48);
+            headerPanel.Size = new Size(1061, 80);
             headerPanel.TabIndex = 1;
+            // 
+            // refreshButton
+            // 
+            refreshButton.Location = new Point(269, 43);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(75, 23);
+            refreshButton.TabIndex = 5;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = true;
+            refreshButton.Click += refreshButton_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(769, 15);
+            label2.Name = "label2";
+            label2.Size = new Size(127, 21);
+            label2.TabIndex = 4;
+            label2.Text = "Employee Name:";
+            // 
+            // userNameLabel
+            // 
+            userNameLabel.AutoSize = true;
+            userNameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            userNameLabel.Location = new Point(913, 15);
+            userNameLabel.Name = "userNameLabel";
+            userNameLabel.Size = new Size(0, 21);
+            userNameLabel.TabIndex = 3;
+            // 
+            // viewTypeLabel
+            // 
+            viewTypeLabel.AutoSize = true;
+            viewTypeLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            viewTypeLabel.Location = new Point(29, 15);
+            viewTypeLabel.Name = "viewTypeLabel";
+            viewTypeLabel.Size = new Size(0, 21);
+            viewTypeLabel.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(18, 15);
+            label1.Location = new Point(29, 46);
             label1.Name = "label1";
             label1.Size = new Size(63, 15);
             label1.TabIndex = 1;
@@ -68,7 +113,7 @@
             // orderTypeCombo
             // 
             orderTypeCombo.FormattingEnabled = true;
-            orderTypeCombo.Location = new Point(100, 12);
+            orderTypeCombo.Location = new Point(117, 43);
             orderTypeCombo.Name = "orderTypeCombo";
             orderTypeCombo.Size = new Size(121, 23);
             orderTypeCombo.TabIndex = 0;
@@ -95,5 +140,9 @@
         private Panel headerPanel;
         private Label label1;
         private ComboBox orderTypeCombo;
+        private Label viewTypeLabel;
+        private Label userNameLabel;
+        private Label label2;
+        private Button refreshButton;
     }
 }

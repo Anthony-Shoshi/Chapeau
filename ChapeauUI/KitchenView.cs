@@ -16,17 +16,17 @@ namespace ChapeauUI
 {
     public partial class KitchenView : Form
     {
-        private Employee currEmp;
-        private List<KitchenWidgets> wids;
+        private Employee currentEmployee;
+        private List<KitchenWidgets> widgets;
         private KitchenService kitchenService;
         private OrderService orderService;
         public KitchenView()
         {
             InitializeComponent();
-            wids = new List<KitchenWidgets>();
+            widgets = new List<KitchenWidgets>();
             kitchenService = new KitchenService();
             orderService = new OrderService();
-            currEmp = Employee.GetInstance();
+            currentEmployee = Employee.GetInstance();
         }
 
         private void KitchenView_Load(object sender, EventArgs e)
@@ -39,8 +39,8 @@ namespace ChapeauUI
 
         private void SetEmployeeInfo()
         {
-            viewTypeLabel.Text = currEmp.UserType == UserType.Chef ? "Kitchen View" : "Bar View";
-            userNameLabel.Text = currEmp.EmployeeName;
+            viewTypeLabel.Text = currentEmployee.UserType == UserType.Chef ? "Kitchen View" : "Bar View";
+            userNameLabel.Text = currentEmployee.EmployeeName;
         }
 
         private void ChangeOrderStatus(int orderId, OrderStatus status)
@@ -61,9 +61,9 @@ namespace ChapeauUI
             {
                 return o.OrderItems.Where(item =>
                 {
-                    if (currEmp.UserType == UserType.Bartender) return item.MenuItem.Category.CategoryName == "Drinks";
-                    if (currEmp.UserType == UserType.Chef) return item.MenuItem.Category.CategoryName != "Drinks";
-                    //currEmp.UserType == UserType.Bartender && item.MenuItem.Category.CategoryName != "Drinks";
+                    if (currentEmployee.UserType == UserType.Bartender) return item.MenuItem.Category.CategoryName == "Drinks";
+                    if (currentEmployee.UserType == UserType.Chef) return item.MenuItem.Category.CategoryName != "Drinks";
+                    //currentEmployee.UserType == UserType.Bartender && item.MenuItem.Category.CategoryName != "Drinks";
                     return true;
                 }).Any();
             }).ToList();
@@ -72,14 +72,14 @@ namespace ChapeauUI
                 if (orderTypeCombo.Text == "Completed orders") return o.Status == OrderStatus.OrderCompleted;
                 else if (orderTypeCombo.Text == "Ready orders") return ((!o.OrderItems.Where(item =>
                 {
-                    if (currEmp.UserType == UserType.Bartender) return item.MenuItem.Category.CategoryName == "Drinks" &&  item.Status != OrderItemStatus.Ready;
-                    if (currEmp.UserType == UserType.Chef) return item.MenuItem.Category.CategoryName != "Drinks" && item.Status != OrderItemStatus.Ready;
+                    if (currentEmployee.UserType == UserType.Bartender) return item.MenuItem.Category.CategoryName == "Drinks" &&  item.Status != OrderItemStatus.Ready;
+                    if (currentEmployee.UserType == UserType.Chef) return item.MenuItem.Category.CategoryName != "Drinks" && item.Status != OrderItemStatus.Ready;
                     return true;
                 }).Any()) && o.Status != OrderStatus.OrderCompleted);
                 else if (orderTypeCombo.Text == "Placed orders") return ((o.OrderItems.Where(item =>
                 {
-                    if (currEmp.UserType == UserType.Bartender) return item.MenuItem.Category.CategoryName == "Drinks" && item.Status != OrderItemStatus.Ready;
-                    if (currEmp.UserType == UserType.Chef) return item.MenuItem.Category.CategoryName != "Drinks" && item.Status != OrderItemStatus.Ready;
+                    if (currentEmployee.UserType == UserType.Bartender) return item.MenuItem.Category.CategoryName == "Drinks" && item.Status != OrderItemStatus.Ready;
+                    if (currentEmployee.UserType == UserType.Chef) return item.MenuItem.Category.CategoryName != "Drinks" && item.Status != OrderItemStatus.Ready;
                     return true;
                 }).Any()) && (o.Status == OrderStatus.OrderPlaced || o.Status == OrderStatus.OrderReceived || o.Status == OrderStatus.OrderProcessing));
                 return true;
@@ -128,7 +128,7 @@ namespace ChapeauUI
                 i++;
                 w.Location = new Point(x, y);
                 w.GetOrder(order, i, itemByCategory, ChangeOrderStatus, SetOrders);
-                wids.Add(w);
+                widgets.Add(w);
                 mainPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
                 mainPanel.Controls.Add(w);
             }
@@ -139,8 +139,8 @@ namespace ChapeauUI
             IDictionary<string, List<OrderItem>> itemByCategory = new Dictionary<string, List<OrderItem>>();
             foreach (OrderItem item in order.OrderItems)
             {
-                if (currEmp.UserType == UserType.Bartender && item.MenuItem.Category.CategoryName != "Drinks") continue;
-                else if (currEmp.UserType == UserType.Chef && item.MenuItem.Category.CategoryName == "Drinks") continue;
+                if (currentEmployee.UserType == UserType.Bartender && item.MenuItem.Category.CategoryName != "Drinks") continue;
+                else if (currentEmployee.UserType == UserType.Chef && item.MenuItem.Category.CategoryName == "Drinks") continue;
                 if (itemByCategory.ContainsKey(item.MenuItem.MenuType))
                 {
                     itemByCategory[item.MenuItem.MenuType].Add(item);

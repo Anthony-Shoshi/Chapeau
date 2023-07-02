@@ -26,6 +26,7 @@ namespace ChapeauUI.Components
         public delegate void RefreshPage();
         private RefreshPage RefreshPageFunc;
         private ChangeOrderStatus ChangeOrderStatusFunc;
+
         public KitchenWidgets()
         {
             InitializeComponent();
@@ -48,14 +49,6 @@ namespace ChapeauUI.Components
             }
             else timer1.Stop();
         }
-
-
-        private void itemTitle1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.BackColor == Color.Blue) this.BackColor = Color.GhostWhite;
-            else this.BackColor = Color.Blue;
-        }
-
 
         public void GetOrder(Order order, int priority, IDictionary<string, List<OrderItem>> itemByCategory, ChangeOrderStatus changeOrderStatus, RefreshPage refreshPage)
         {
@@ -81,7 +74,6 @@ namespace ChapeauUI.Components
                 if (currEmp.UserType == UserType.Chef) return item.MenuItem.Category.CategoryName != "Drinks" && item.Status != OrderItemStatus.Ready;
                 return true;
              }).Any();
-            //btnUpdate.Enabled = order.Status != OrderStatus.OrderCompleted && order.Status != OrderStatus.OrderReadyToServe;
             btnUpdate.BackColor = btnUpdate.Enabled ? SystemColors.HotTrack : Color.Gray;
 
             tableNumberLabel.Text = order.Table.Number.ToString();
@@ -96,13 +88,15 @@ namespace ChapeauUI.Components
             int count = 0;
             foreach (KeyValuePair<string, List<OrderItem>> kvp in this.itemByCategory)
             {
-                Label lb = new Label();
-                lb.Text = kvp.Key;
-                lb.Visible = true;
-                lb.BackColor = SystemColors.HighlightText;
-                lb.AutoSize = true;
-                lb.ForeColor = SystemColors.MenuHighlight;
-                lb.Font = new Font("Segoe UI", 12, FontStyle.Bold, GraphicsUnit.Point);
+                Label lb = new()
+                {
+                    Text = kvp.Key,
+                    Visible = true,
+                    BackColor = SystemColors.HighlightText,
+                    AutoSize = true,
+                    ForeColor = SystemColors.MenuHighlight,
+                    Font = new Font("Segoe UI", 12, FontStyle.Bold, GraphicsUnit.Point)
+                };
                 int y = count > 0 ? 35 * (count + GetPrevItems(count)) : 0;
                 lb.Location = new Point(4, y);
 
@@ -132,16 +126,18 @@ namespace ChapeauUI.Components
 
         public void DisplayMenuItem(OrderItem orderItem, int startX, int startY)
         {
-            CheckBox cb = new CheckBox();
-            cb.Text = orderItem.MenuItem.Name;
-            Name = $"{orderItem.MenuItem.MenuId}";
-            cb.Visible = true;
-            cb.AutoSize = true;
-            cb.MaximumSize = new Size(370, 0);
-            cb.AutoEllipsis = true;
-            cb.Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point);
-            cb.Location = new Point(startX, startY);
-            cb.Enabled = orderItem.Status != OrderItemStatus.Ready;
+            CheckBox cb = new()
+            {
+                Text = orderItem.MenuItem.Name,
+                Name = $"{orderItem.MenuItem.MenuId}",
+                Visible = true,
+                AutoSize = true,
+                MaximumSize = new Size(370, 0),
+                AutoEllipsis = true,
+                Font = new Font("Segoe UI", 10, FontStyle.Bold, GraphicsUnit.Point),
+                Location = new Point(startX, startY),
+                Enabled = orderItem.Status != OrderItemStatus.Ready
+            };
             panelButtom.Controls.Add(cb);
 
             Label noteLabel = new Label

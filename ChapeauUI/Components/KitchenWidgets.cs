@@ -18,14 +18,14 @@ namespace ChapeauUI.Components
         private Order order;
         private int priority;
         private TimeSpan waitTime;
-        private OrderService orderService;
+        private KitchenService kitchenService;
         private Employee emp;
         private IDictionary<string, List<OrderItem>> itemByCategory = new Dictionary<string, List<OrderItem>>();
 
         public KitchenWidgets()
         {
             InitializeComponent();
-            orderService = new OrderService();
+            kitchenService = new KitchenService();
             timer1.Tick += new EventHandler(IncrementWaitTimeTimer);
             timer1.Interval = 1000;
             timer1.Enabled = true;
@@ -220,15 +220,15 @@ namespace ChapeauUI.Components
                     Label currItemLabel = statusPanel.Controls.OfType<Label>().Where(lb => lb.Name == $"{item.OrderItemId}-{item.MenuItem.MenuId}").FirstOrDefault();
                     if (item == null || currItemLabel == null) return;
 
-                    switch(item.Status)
+                    switch (item.Status)
                     {
                         case OrderItemStatus.Ordered:
-                            orderService.UpdateOrderItemStatus(item.Order.OrderId, item.MenuItem.MenuId, OrderItemStatus.BeingPrepared);
+                            kitchenService.UpdateOrderItemStatus(item.Order.OrderId, item.MenuItem.MenuId, OrderItemStatus.BeingPrepared);
                             item.Status = OrderItemStatus.BeingPrepared;
                             currItemLabel.Text = "Being Prepared";
                             break;
                         case OrderItemStatus.BeingPrepared:
-                            orderService.UpdateOrderItemStatus(item.Order.OrderId, item.MenuItem.MenuId, OrderItemStatus.Ready);
+                            kitchenService.UpdateOrderItemStatus(item.Order.OrderId, item.MenuItem.MenuId, OrderItemStatus.Ready);
                             item.Status = OrderItemStatus.Ready;
                             currItemLabel.Text = "Ready";
                             break;

@@ -17,13 +17,13 @@ namespace ChapeauUI
     {
         private Employee currEmp;
         private List<KitchenWidgets> wids;
-        private OrderService orderService;
+        private KitchenService kitchenService;
 
         public KitchenView()
         {
             InitializeComponent();
             wids = new List<KitchenWidgets>();
-            orderService = new OrderService();
+            kitchenService = new KitchenService();
             currEmp = Employee.GetInstance();
         }
 
@@ -43,7 +43,7 @@ namespace ChapeauUI
 
         private void SetOrders()
         {
-            List<Order> orders = orderService.GetOrders();
+            List<Order> orders = kitchenService.GetOrders();
             int i = 0;
             orders = orders.Where(o =>
             {

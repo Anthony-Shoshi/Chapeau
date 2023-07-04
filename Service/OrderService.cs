@@ -31,10 +31,18 @@ namespace Service
         {
             return orderDao.GetOrderItemsByOrderId(orderId);
         }
-        
+        public List<Order> GetOrders()
+        {
+            return orderDao.GetAllOrders();
+        }
+
         public void UpdateOrderStatus(int orderId, OrderStatus status)
         {
             orderDao.UpdateOrderStatus(orderId, status);
+        }
+        public void UpdateOrderItemStatus(int orderId, int menuId, OrderItemStatus status)
+        {
+            orderDao.UpdateOrderItemStatus(orderId, menuId, status);
         }
 
         public void UpdateOrderItem(OrderItem orderItem)
@@ -49,6 +57,11 @@ namespace Service
         public List<Order> GetOrderByStatus(int TableID)
         {
             return orderDao.GetORderByStatus(TableID);
+        }
+        
+        public Order GetOrderWithItemsByTableId(int TableID)
+        {
+            return orderDao.GetOrderWithItemsByTableId(TableID);
         }
     }
 }

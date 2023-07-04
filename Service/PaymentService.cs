@@ -17,44 +17,14 @@ namespace Service
             _paymentDao = new PaymentDao();
         }
 
-        public List<Payment> GetAllPayments()
+        public int AddPayment(Payment payment)
         {
-            return _paymentDao.GetAllPayments();
+            return _paymentDao.AddPayment(payment);
         }
 
-        public void AddPayment(Payment payment)
+        public void AddBillSplit (BillSplit billSplit)
         {
-            _paymentDao.AddPayment(payment);
-        }
-
-        public void UpdatePayment(Payment payment)
-        {
-            _paymentDao.UpdatePayment(payment);
-        }
-
-        public void DeletePayment(int paymentId)
-        {
-            _paymentDao.DeletePayment(paymentId);
-        }
-
-        public Payment GetPaymentById(int paymentId)
-        {
-            return _paymentDao.GetPaymentById(paymentId);
-        }
-
-        public List<Payment> GetPaymentsByOrderId(int orderId)
-        {
-            return _paymentDao.GetPaymentsByOrderId(orderId);
-        }
-
-        public List<Payment> GetPaymentsByEmployeeId(int employeeId)
-        {
-            return _paymentDao.GetPaymentsByEmployeeId(employeeId);
-        }
-
-        public List<string> GetTheNameOfOrderItems(int orderId)
-        {
-            return _paymentDao.GetTheNameOfOrderItems(orderId);
+            _paymentDao.AddBillSplit(billSplit);
         }
     }
 }

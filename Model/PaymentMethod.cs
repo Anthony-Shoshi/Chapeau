@@ -10,7 +10,7 @@ namespace Model
     {
         Cash,
         Visa,
-        Master,
+        MasterCard,
         AmericanExpress
     }
 }

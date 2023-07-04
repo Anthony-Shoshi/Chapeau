@@ -64,7 +64,37 @@ namespace DAL
             reader.Close();
             return employee;
         }
-        
+
+        public Employee GetEmployeeById(int id)
+        {
+            string sqlQuery = "SELECT Employee_Id, Username, Employee_Name, User_Type FROM Employee WHERE Employee_Id = @EmployeeId";
+            Employee employee = null;
+            SqlDataReader reader = ExecuteReader(sqlQuery, command =>
+            {
+                command.Parameters.AddWithValue("@EmployeeId", id);
+            });
+
+            if (reader.Read())
+            {
+                employee = Employee.GetInstance();
+                employee.EmployeeName = (string)reader["Employee_Name"];
+                employee.EmployeeId = (int)reader["Employee_Id"];
+                employee.Username = (string)reader["Username"];
+
+                string userTypeString = (string)reader["User_Type"];
+                if (Enum.TryParse(userTypeString, out UserType userType))
+                {
+                    employee.UserType = userType;
+                }
+                else
+                {
+                    employee.UserType = UserType.Waiter;
+                }
+            }
+
+            reader.Close();
+            return employee;
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-﻿    using System.Windows.Forms;
+﻿using System.Globalization;
 using ChapeauUI.UserControls;
 using Model;
 using Service;
@@ -15,6 +15,9 @@ namespace ChapeauUI
         private OrderStatus orderStatus;
         private OrderService orderService;
 
+        private decimal totalCost;
+        private int currentOrderId;
+
         public WaiterView()
         {
             InitializeComponent();
@@ -27,6 +30,8 @@ namespace ChapeauUI
             btnMenuItemUpdate.Visible = false;
             HidePanels();
             tableLayoutPanelTable.Show();
+
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo("en-IE");
         }
 
         private void UpdateMenuOnUserRole()
@@ -49,6 +54,8 @@ namespace ChapeauUI
             pnlMenu.Hide();
             pnlMenuCrud.Hide();
             panelTableStatus.Hide();
+            pnlOrderDetails.Hide();
+            pnlPaymentPage.Hide();
         }
 
         //============================== START TABLE OVERVIEW ============================================
@@ -175,7 +182,7 @@ namespace ChapeauUI
                 {
 
                     ListViewItem item = new ListViewItem($"{order.OrderId}");
-                    item.SubItems.Add(order.Status.ToString());
+                    item.SubItems.Add(orderStatus.ToString());
                     item.SubItems.Add(order.FormattedWaitingTime.ToString());
                     item.Tag = order;
                     listViewOrderStatus.Items.Add(item);
@@ -862,10 +869,325 @@ namespace ChapeauUI
             }
         }
 
-
-
-
         //============================== END MENU CRUD ============================================
+
+        //============================== START PAYMENT ============================================
+
+        private void btnViewOrder_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            ShowOrderViewPanel();
+        }
+
+        private void ShowOrderViewPanel()
+        {
+            pnlOrderDetails.Show();
+            lblOrderViewHeader.Text = $"Order Details- Table {ClickedTable.Number}";
+            GetOrderDetails();
+        }
+
+        private void GetOrderDetails()
+        {
+            OrderService orderService = new OrderService();
+            Order order = orderService.GetOrderWithItemsByTableId(ClickedTable.Number);
+
+            if (order == null)
+            {
+                MessageBox.Show("No order found for the selected table.");
+                return;
+            }
+
+            listViewOrderDetails.Items.Clear();
+            listViewOrderDetails.Groups.Clear();
+
+            decimal subTotal = 0;
+
+            foreach (OrderItem orderItem in order.OrderItems)
+            {
+                MenuItem menuItem = orderItem.MenuItem;
+                decimal vatRate = menuItem.IsAlcoholic ? 0.21m : 0.09m;
+                decimal vatCost = orderItem.UnitPrice * vatRate * orderItem.Quantity;
+                decimal total = vatCost + (orderItem.UnitPrice * orderItem.Quantity);
+
+                ListViewItem item = new ListViewItem(menuItem.Name);
+                item.SubItems.Add(menuItem.Price.ToString("C2"));
+                item.SubItems.Add(orderItem.Quantity.ToString());
+                item.SubItems.Add(vatCost.ToString("C2"));
+                item.SubItems.Add(total.ToString("C2"));
+                listViewOrderDetails.Items.Add(item);
+
+                subTotal += total;
+            }
+
+            totalCost = subTotal;
+            currentOrderId = order.OrderId;
+
+            AddGrandTotalValue(subTotal);
+        }
+
+        private void AddGrandTotalValue(decimal subTotal)
+        {
+            ListViewItem grandTotalItem = new ListViewItem("Grand Total");
+            grandTotalItem.Font = new Font(listViewOrderDetails.Font, FontStyle.Bold);
+            grandTotalItem.SubItems.Add("");
+            grandTotalItem.SubItems.Add("");
+            grandTotalItem.SubItems.Add("");
+            grandTotalItem.SubItems.Add(subTotal.ToString("C2"));
+
+            ListViewGroup grandTotalGroup = new ListViewGroup();
+            listViewOrderDetails.Items.Add(new ListViewItem(string.Empty) { Group = grandTotalGroup });
+            listViewOrderDetails.Groups.Add(grandTotalGroup);
+            listViewOrderDetails.Items.Add(grandTotalItem);
+
+            listViewOrderDetails.Groups.RemoveAt(0);
+        }
+
+        private void btnProceedPayment_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            ShowPaymentPanel();
+        }
+
+        private void ShowPaymentPanel()
+        {
+            pnlPaymentPage.Show();
+            lblPaymentPageHeader.Text = $"Payment For {ClickedTable.Number}";
+            lblTotalAmnt.Text = $"Total: {totalCost.ToString("C2")}";
+        }
+
+        private void chckbxSpliteBill_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chckbxSpliteBill.Checked)
+            {
+                txtNumPeople.ReadOnly = false;
+                txtTotalAmount.ReadOnly = true;
+            }
+            else
+            {
+                txtNumPeople.ReadOnly = true;
+                txtTotalAmount.ReadOnly = false;
+                txtNumPeople.Text = "";
+                txtTotalAmount.Text = "";
+            }
+        }
+
+        private void calculateSplitAmount()
+        {
+            decimal payableAmnt;
+
+            if (!txtTipAmount.Text.Equals(""))
+            {
+                payableAmnt = (totalCost + int.Parse(txtTipAmount.Text)) / int.Parse(txtNumPeople.Text);
+            }
+            else
+            {
+                payableAmnt = totalCost / int.Parse(txtNumPeople.Text);
+            }
+
+            txtTotalAmount.Text = payableAmnt.ToString("C2");
+        }
+
+        private void txtTipAmount_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtTipAmount.Text.Equals(""))
+            { 
+                chckbxTip.Enabled = true;
+            }
+            else
+            {
+                chckbxTip.Enabled = false;
+            }
+
+            if (!txtTipAmount.Text.Equals("") && chckbxSpliteBill.Checked && int.TryParse(txtTipAmount.Text, out int number))
+                calculateSplitAmount();
+            return;
+
+        }
+
+        private void txtNumPeople_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!txtNumPeople.Text.Equals("") && int.TryParse(txtNumPeople.Text, out int number))
+                calculateSplitAmount();
+            return;
+        }
+
+        private void txtTotalAmount_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtTotalAmount.Text.Equals(""))
+            {
+                chckbxSpliteBill.Enabled = true;
+            }
+            else
+            {
+                chckbxSpliteBill.Enabled = false;
+            }
+
+
+            if (!txtTotalAmount.Text.Equals("") && int.TryParse(txtTotalAmount.Text, out int number) && chckbxTip.Checked)
+            {
+                txtTipAmount.ReadOnly = true;
+                decimal totalAmount = decimal.Parse(txtTotalAmount.Text);
+
+                if (!txtCashAmount.Text.Equals("") && int.TryParse(txtCashAmount.Text, out int number1))
+                {
+                    totalAmount = totalAmount + (decimal)number1;
+                }
+
+                decimal tips = totalAmount - totalCost;
+                txtTipAmount.Text = tips.ToString("C2");
+            }
+            else
+            {
+                txtTipAmount.ReadOnly = false;
+                //txtTipAmount.Text = "";
+            }
+        }
+
+        private void chckbxTip_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chckbxTip.Checked && !txtTotalAmount.Text.Equals(""))
+            {
+                txtTipAmount.ReadOnly = true;
+                decimal tips = decimal.Parse(txtTotalAmount.Text) - totalCost;
+                txtTipAmount.Text = tips.ToString("C2");
+            }
+            else
+            {
+                txtTipAmount.ReadOnly = false;
+                txtTipAmount.Text = "";
+            }
+        }
+
+        private void btnPayNow_Click(object sender, EventArgs e)
+        {
+            string totalAmountText = txtTotalAmount.Text.Trim();
+            string tipAmountText = txtTipAmount.Text.Trim();
+            decimal totalAmount;
+
+            if (totalAmountText.Contains("€"))
+            {
+                totalAmountText = totalAmountText.Replace("€", "");
+            }
+
+            if (tipAmountText.Contains("€"))
+            {
+                tipAmountText = tipAmountText.Replace("€", "");
+            }
+
+            if (!decimal.TryParse(totalAmountText, out totalAmount))
+            {
+                MessageBox.Show("Please enter payable amount!");
+                return;
+            }
+
+            decimal tipAmount;
+            if (!decimal.TryParse(tipAmountText, out tipAmount))
+            {
+                tipAmount = 0;
+            }
+
+            string paymentMethod = GetSelectedPaymentMethod();
+            string comment = txtComment.Text.Trim();
+
+            PaymentService paymentService = new PaymentService();
+            TableService tableService = new TableService();
+
+            decimal cashAmount;
+            if (decimal.TryParse(txtCashAmount.Text, out cashAmount))
+            {
+                if (cashAmount > totalAmount)
+                {
+                    MessageBox.Show("Cash amount cannot be greater than the total payable amount.");
+                    return;
+                }
+            }
+
+            Payment payment = new Payment
+            {
+                PaymentDate = DateTime.Now,
+                Tip = tipAmount,
+                Comment = comment,
+                OrderId = currentOrderId,
+                Amount = totalAmount,
+                CashAmount = cashAmount,
+                PaymentMethod = (PaymentMethod)Enum.Parse(typeof(PaymentMethod), paymentMethod)
+            };
+
+
+           // MessageBox.Show(txtTipAmount.ToString());
+
+
+            int paymentId = paymentService.AddPayment(payment);
+            payment.PaymentId = paymentId;
+
+            if (chckbxSpliteBill.Checked)
+            {
+                int numberOfPeople;
+                if (!int.TryParse(txtNumPeople.Text, out numberOfPeople))
+                {
+                    MessageBox.Show("Invalid number of people.");
+                    return;
+                }
+
+                decimal amountPerPerson = totalAmount;
+                BillSplit billSplit = new BillSplit
+                {
+                    Payment = payment,
+                    NumberOfPeople = numberOfPeople,
+                    AmountPerPerson = amountPerPerson
+                };
+
+                paymentService.AddBillSplit(billSplit);
+            }
+
+            tableService.UpdateStatus(ClickedTable.TableId, TableStatus.Available);
+
+            MessageBox.Show("Payment completed successfully.");
+
+            ResetPaymentInput();
+            HidePanels();
+            tableLayoutPanelTable.Controls.Clear();
+            tableLayoutPanelTable.Show();
+            GeneratTable();
+        }
+
+        private void ResetPaymentInput()
+        {
+            txtTipAmount.Text = "";
+            txtComment.Text = "";
+            txtTotalAmount.Text = "";
+            chckbxSpliteBill.Enabled = true;
+            chckbxSpliteBill.Enabled = true;
+        }
+
+        private string GetSelectedPaymentMethod()
+        {
+            string selectedPaymentMethod = "";
+
+            if (rbCash.Checked)
+            {
+                selectedPaymentMethod = rbCash.Text;
+            }
+            else if (rbVisa.Checked)
+            {
+                selectedPaymentMethod = rbVisa.Text;
+            }
+            else if (rbMaster.Checked)
+            {
+                selectedPaymentMethod = rbMaster.Text;
+            }
+            else if (rbAmex.Checked)
+            {
+                selectedPaymentMethod = rbAmex.Text;
+            }
+
+            selectedPaymentMethod = selectedPaymentMethod.Replace(" ", "");
+
+            return selectedPaymentMethod;
+        }
+
+
+        //============================== END PAYMENT ============================================
 
     }
 }

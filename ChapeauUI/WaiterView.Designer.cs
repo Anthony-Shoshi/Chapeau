@@ -69,6 +69,7 @@
             this.btnMenuItemUpdate = new System.Windows.Forms.Button();
             this.btnAddMenu = new System.Windows.Forms.Button();
             this.panelTableStatus = new System.Windows.Forms.Panel();
+            this.btnViewOrder = new System.Windows.Forms.Button();
             this.buttonAddOrder = new System.Windows.Forms.Button();
             this.buttonFreeTable = new System.Windows.Forms.Button();
             this.ServeButton = new System.Windows.Forms.Button();
@@ -76,6 +77,38 @@
             this.OrderId = new System.Windows.Forms.ColumnHeader();
             this.Status = new System.Windows.Forms.ColumnHeader();
             this.WaitTime = new System.Windows.Forms.ColumnHeader();
+            this.pnlOrderDetails = new System.Windows.Forms.Panel();
+            this.btnProceedPayment = new System.Windows.Forms.Button();
+            this.listViewOrderDetails = new System.Windows.Forms.ListView();
+            this.Menu = new System.Windows.Forms.ColumnHeader();
+            this.Price = new System.Windows.Forms.ColumnHeader();
+            this.Quantity = new System.Windows.Forms.ColumnHeader();
+            this.VAT = new System.Windows.Forms.ColumnHeader();
+            this.Total = new System.Windows.Forms.ColumnHeader();
+            this.lblOrderViewHeader = new System.Windows.Forms.Label();
+            this.pnlPaymentPage = new System.Windows.Forms.Panel();
+            this.lblPaymentPageHeader = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNumPeople = new System.Windows.Forms.TextBox();
+            this.lblNoPeopleText = new System.Windows.Forms.Label();
+            this.chckbxSpliteBill = new System.Windows.Forms.CheckBox();
+            this.btnPayNow = new System.Windows.Forms.Button();
+            this.txtComment = new System.Windows.Forms.TextBox();
+            this.lblCommentText = new System.Windows.Forms.Label();
+            this.rbAmex = new System.Windows.Forms.RadioButton();
+            this.rbMaster = new System.Windows.Forms.RadioButton();
+            this.rbVisa = new System.Windows.Forms.RadioButton();
+            this.rbCash = new System.Windows.Forms.RadioButton();
+            this.lblPMtext = new System.Windows.Forms.Label();
+            this.chckbxTip = new System.Windows.Forms.CheckBox();
+            this.txtTipAmount = new System.Windows.Forms.TextBox();
+            this.txtTotalAmount = new System.Windows.Forms.TextBox();
+            this.lblTipText = new System.Windows.Forms.Label();
+            this.lblPayableText = new System.Windows.Forms.Label();
+            this.lblTotalText = new System.Windows.Forms.Label();
+            this.lblTotalAmnt = new System.Windows.Forms.Label();
+            this.lblCashAmount = new System.Windows.Forms.Label();
+            this.txtCashAmount = new System.Windows.Forms.TextBox();
             this.topMenu.SuspendLayout();
             this.pnlMenuMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuMenu)).BeginInit();
@@ -86,6 +119,9 @@
             this.pnlMenuCrud.SuspendLayout();
             this.pnlMenuAddUpdate.SuspendLayout();
             this.panelTableStatus.SuspendLayout();
+            this.pnlOrderDetails.SuspendLayout();
+            this.pnlPaymentPage.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // topMenu
@@ -530,6 +566,7 @@
             // 
             // panelTableStatus
             // 
+            this.panelTableStatus.Controls.Add(this.btnViewOrder);
             this.panelTableStatus.Controls.Add(this.buttonAddOrder);
             this.panelTableStatus.Controls.Add(this.buttonFreeTable);
             this.panelTableStatus.Controls.Add(this.ServeButton);
@@ -540,16 +577,29 @@
             this.panelTableStatus.Size = new System.Drawing.Size(800, 397);
             this.panelTableStatus.TabIndex = 16;
             // 
+            // btnViewOrder
+            // 
+            this.btnViewOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(161)))), ((int)(((byte)(209)))));
+            this.btnViewOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnViewOrder.Location = new System.Drawing.Point(575, 224);
+            this.btnViewOrder.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnViewOrder.Name = "btnViewOrder";
+            this.btnViewOrder.Size = new System.Drawing.Size(186, 42);
+            this.btnViewOrder.TabIndex = 5;
+            this.btnViewOrder.Text = "View Order";
+            this.btnViewOrder.UseVisualStyleBackColor = false;
+            this.btnViewOrder.Click += new System.EventHandler(this.btnViewOrder_Click);
+            // 
             // buttonAddOrder
             // 
             this.buttonAddOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(161)))), ((int)(((byte)(209)))));
             this.buttonAddOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonAddOrder.Location = new System.Drawing.Point(575, 195);
+            this.buttonAddOrder.Location = new System.Drawing.Point(575, 143);
             this.buttonAddOrder.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.buttonAddOrder.Name = "buttonAddOrder";
             this.buttonAddOrder.Size = new System.Drawing.Size(186, 42);
             this.buttonAddOrder.TabIndex = 4;
-            this.buttonAddOrder.Text = "AddOrder";
+            this.buttonAddOrder.Text = "Add Order";
             this.buttonAddOrder.UseVisualStyleBackColor = false;
             this.buttonAddOrder.Click += new System.EventHandler(this.buttonAddOrder_Click);
             // 
@@ -611,16 +661,333 @@
             this.WaitTime.Text = "Waiting Time";
             this.WaitTime.Width = 150;
             // 
+            // pnlOrderDetails
+            // 
+            this.pnlOrderDetails.Controls.Add(this.btnProceedPayment);
+            this.pnlOrderDetails.Controls.Add(this.listViewOrderDetails);
+            this.pnlOrderDetails.Controls.Add(this.lblOrderViewHeader);
+            this.pnlOrderDetails.Location = new System.Drawing.Point(0, 53);
+            this.pnlOrderDetails.Name = "pnlOrderDetails";
+            this.pnlOrderDetails.Size = new System.Drawing.Size(800, 384);
+            this.pnlOrderDetails.TabIndex = 6;
+            // 
+            // btnProceedPayment
+            // 
+            this.btnProceedPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(161)))), ((int)(((byte)(209)))));
+            this.btnProceedPayment.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnProceedPayment.Location = new System.Drawing.Point(623, 327);
+            this.btnProceedPayment.Name = "btnProceedPayment";
+            this.btnProceedPayment.Size = new System.Drawing.Size(165, 46);
+            this.btnProceedPayment.TabIndex = 4;
+            this.btnProceedPayment.Text = "Proceed to Payment";
+            this.btnProceedPayment.UseVisualStyleBackColor = false;
+            this.btnProceedPayment.Click += new System.EventHandler(this.btnProceedPayment_Click);
+            // 
+            // listViewOrderDetails
+            // 
+            this.listViewOrderDetails.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Menu,
+            this.Price,
+            this.Quantity,
+            this.VAT,
+            this.Total});
+            this.listViewOrderDetails.Location = new System.Drawing.Point(11, 50);
+            this.listViewOrderDetails.Name = "listViewOrderDetails";
+            this.listViewOrderDetails.Size = new System.Drawing.Size(777, 268);
+            this.listViewOrderDetails.TabIndex = 3;
+            this.listViewOrderDetails.UseCompatibleStateImageBehavior = false;
+            this.listViewOrderDetails.View = System.Windows.Forms.View.Details;
+            // 
+            // Menu
+            // 
+            this.Menu.Text = "Menu Name";
+            this.Menu.Width = 350;
+            // 
+            // Price
+            // 
+            this.Price.Text = "Unit Price";
+            this.Price.Width = 80;
+            // 
+            // Quantity
+            // 
+            this.Quantity.Text = "Quantity";
+            this.Quantity.Width = 80;
+            // 
+            // VAT
+            // 
+            this.VAT.Text = "VAT Cost";
+            this.VAT.Width = 80;
+            // 
+            // Total
+            // 
+            this.Total.Text = "Total";
+            this.Total.Width = 80;
+            // 
+            // lblOrderViewHeader
+            // 
+            this.lblOrderViewHeader.AutoSize = true;
+            this.lblOrderViewHeader.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderViewHeader.Location = new System.Drawing.Point(11, 14);
+            this.lblOrderViewHeader.Name = "lblOrderViewHeader";
+            this.lblOrderViewHeader.Size = new System.Drawing.Size(166, 28);
+            this.lblOrderViewHeader.TabIndex = 2;
+            this.lblOrderViewHeader.Text = "Order - Table 10";
+            // 
+            // pnlPaymentPage
+            // 
+            this.pnlPaymentPage.Controls.Add(this.lblPaymentPageHeader);
+            this.pnlPaymentPage.Controls.Add(this.panel1);
+            this.pnlPaymentPage.Location = new System.Drawing.Point(0, 53);
+            this.pnlPaymentPage.Name = "pnlPaymentPage";
+            this.pnlPaymentPage.Size = new System.Drawing.Size(794, 384);
+            this.pnlPaymentPage.TabIndex = 4;
+            // 
+            // lblPaymentPageHeader
+            // 
+            this.lblPaymentPageHeader.AutoSize = true;
+            this.lblPaymentPageHeader.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPaymentPageHeader.Location = new System.Drawing.Point(9, 14);
+            this.lblPaymentPageHeader.Name = "lblPaymentPageHeader";
+            this.lblPaymentPageHeader.Size = new System.Drawing.Size(166, 28);
+            this.lblPaymentPageHeader.TabIndex = 3;
+            this.lblPaymentPageHeader.Text = "Order - Table 10";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtCashAmount);
+            this.panel1.Controls.Add(this.lblCashAmount);
+            this.panel1.Controls.Add(this.txtNumPeople);
+            this.panel1.Controls.Add(this.lblNoPeopleText);
+            this.panel1.Controls.Add(this.chckbxSpliteBill);
+            this.panel1.Controls.Add(this.btnPayNow);
+            this.panel1.Controls.Add(this.txtComment);
+            this.panel1.Controls.Add(this.lblCommentText);
+            this.panel1.Controls.Add(this.rbAmex);
+            this.panel1.Controls.Add(this.rbMaster);
+            this.panel1.Controls.Add(this.rbVisa);
+            this.panel1.Controls.Add(this.rbCash);
+            this.panel1.Controls.Add(this.lblPMtext);
+            this.panel1.Controls.Add(this.chckbxTip);
+            this.panel1.Controls.Add(this.txtTipAmount);
+            this.panel1.Controls.Add(this.txtTotalAmount);
+            this.panel1.Controls.Add(this.lblTipText);
+            this.panel1.Controls.Add(this.lblPayableText);
+            this.panel1.Controls.Add(this.lblTotalText);
+            this.panel1.Controls.Add(this.lblTotalAmnt);
+            this.panel1.Location = new System.Drawing.Point(11, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(772, 320);
+            this.panel1.TabIndex = 4;
+            // 
+            // txtNumPeople
+            // 
+            this.txtNumPeople.Location = new System.Drawing.Point(184, 164);
+            this.txtNumPeople.Name = "txtNumPeople";
+            this.txtNumPeople.ReadOnly = true;
+            this.txtNumPeople.Size = new System.Drawing.Size(100, 23);
+            this.txtNumPeople.TabIndex = 17;
+            this.txtNumPeople.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNumPeople_KeyUp);
+            // 
+            // lblNoPeopleText
+            // 
+            this.lblNoPeopleText.AutoSize = true;
+            this.lblNoPeopleText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNoPeopleText.Location = new System.Drawing.Point(18, 162);
+            this.lblNoPeopleText.Name = "lblNoPeopleText";
+            this.lblNoPeopleText.Size = new System.Drawing.Size(158, 21);
+            this.lblNoPeopleText.TabIndex = 16;
+            this.lblNoPeopleText.Text = "Number of People: ";
+            // 
+            // chckbxSpliteBill
+            // 
+            this.chckbxSpliteBill.AutoSize = true;
+            this.chckbxSpliteBill.Location = new System.Drawing.Point(18, 127);
+            this.chckbxSpliteBill.Name = "chckbxSpliteBill";
+            this.chckbxSpliteBill.Size = new System.Drawing.Size(176, 19);
+            this.chckbxSpliteBill.TabIndex = 15;
+            this.chckbxSpliteBill.Text = "Do you want to split the bill?";
+            this.chckbxSpliteBill.UseVisualStyleBackColor = true;
+            this.chckbxSpliteBill.CheckedChanged += new System.EventHandler(this.chckbxSpliteBill_CheckedChanged);
+            // 
+            // btnPayNow
+            // 
+            this.btnPayNow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(161)))), ((int)(((byte)(209)))));
+            this.btnPayNow.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPayNow.Location = new System.Drawing.Point(407, 255);
+            this.btnPayNow.Name = "btnPayNow";
+            this.btnPayNow.Size = new System.Drawing.Size(165, 46);
+            this.btnPayNow.TabIndex = 14;
+            this.btnPayNow.Text = "Pay Now";
+            this.btnPayNow.UseVisualStyleBackColor = false;
+            this.btnPayNow.Click += new System.EventHandler(this.btnPayNow_Click);
+            // 
+            // txtComment
+            // 
+            this.txtComment.Location = new System.Drawing.Point(407, 143);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(354, 88);
+            this.txtComment.TabIndex = 13;
+            // 
+            // lblCommentText
+            // 
+            this.lblCommentText.AutoSize = true;
+            this.lblCommentText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCommentText.Location = new System.Drawing.Point(407, 112);
+            this.lblCommentText.Name = "lblCommentText";
+            this.lblCommentText.Size = new System.Drawing.Size(85, 21);
+            this.lblCommentText.TabIndex = 12;
+            this.lblCommentText.Text = "Comment";
+            // 
+            // rbAmex
+            // 
+            this.rbAmex.AutoSize = true;
+            this.rbAmex.Location = new System.Drawing.Point(573, 92);
+            this.rbAmex.Name = "rbAmex";
+            this.rbAmex.Size = new System.Drawing.Size(115, 19);
+            this.rbAmex.TabIndex = 11;
+            this.rbAmex.Text = "AmericanExpress";
+            this.rbAmex.UseVisualStyleBackColor = true;
+            // 
+            // rbMaster
+            // 
+            this.rbMaster.AutoSize = true;
+            this.rbMaster.Location = new System.Drawing.Point(573, 67);
+            this.rbMaster.Name = "rbMaster";
+            this.rbMaster.Size = new System.Drawing.Size(86, 19);
+            this.rbMaster.TabIndex = 10;
+            this.rbMaster.Text = "MasterCard";
+            this.rbMaster.UseVisualStyleBackColor = true;
+            // 
+            // rbVisa
+            // 
+            this.rbVisa.AutoSize = true;
+            this.rbVisa.Location = new System.Drawing.Point(573, 42);
+            this.rbVisa.Name = "rbVisa";
+            this.rbVisa.Size = new System.Drawing.Size(46, 19);
+            this.rbVisa.TabIndex = 9;
+            this.rbVisa.Text = "Visa";
+            this.rbVisa.UseVisualStyleBackColor = true;
+            // 
+            // rbCash
+            // 
+            this.rbCash.AutoSize = true;
+            this.rbCash.Checked = true;
+            this.rbCash.Location = new System.Drawing.Point(573, 17);
+            this.rbCash.Name = "rbCash";
+            this.rbCash.Size = new System.Drawing.Size(51, 19);
+            this.rbCash.TabIndex = 8;
+            this.rbCash.TabStop = true;
+            this.rbCash.Text = "Cash";
+            this.rbCash.UseVisualStyleBackColor = true;
+            // 
+            // lblPMtext
+            // 
+            this.lblPMtext.AutoSize = true;
+            this.lblPMtext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPMtext.Location = new System.Drawing.Point(407, 14);
+            this.lblPMtext.Name = "lblPMtext";
+            this.lblPMtext.Size = new System.Drawing.Size(150, 21);
+            this.lblPMtext.TabIndex = 7;
+            this.lblPMtext.Text = "Payment Method: ";
+            // 
+            // chckbxTip
+            // 
+            this.chckbxTip.AutoSize = true;
+            this.chckbxTip.Location = new System.Drawing.Point(182, 91);
+            this.chckbxTip.Name = "chckbxTip";
+            this.chckbxTip.Size = new System.Drawing.Size(114, 19);
+            this.chckbxTip.TabIndex = 6;
+            this.chckbxTip.Text = "Keep the change";
+            this.chckbxTip.UseVisualStyleBackColor = true;
+            this.chckbxTip.CheckedChanged += new System.EventHandler(this.chckbxTip_CheckedChanged);
+            // 
+            // txtTipAmount
+            // 
+            this.txtTipAmount.Location = new System.Drawing.Point(182, 52);
+            this.txtTipAmount.Name = "txtTipAmount";
+            this.txtTipAmount.Size = new System.Drawing.Size(100, 23);
+            this.txtTipAmount.TabIndex = 5;
+            this.txtTipAmount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTipAmount_KeyUp);
+            // 
+            // txtTotalAmount
+            // 
+            this.txtTotalAmount.Location = new System.Drawing.Point(182, 248);
+            this.txtTotalAmount.Name = "txtTotalAmount";
+            this.txtTotalAmount.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalAmount.TabIndex = 4;
+            this.txtTotalAmount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTotalAmount_KeyUp);
+            // 
+            // lblTipText
+            // 
+            this.lblTipText.AutoSize = true;
+            this.lblTipText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTipText.Location = new System.Drawing.Point(18, 50);
+            this.lblTipText.Name = "lblTipText";
+            this.lblTipText.Size = new System.Drawing.Size(108, 21);
+            this.lblTipText.TabIndex = 3;
+            this.lblTipText.Text = "Tip Amount: ";
+            // 
+            // lblPayableText
+            // 
+            this.lblPayableText.AutoSize = true;
+            this.lblPayableText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPayableText.Location = new System.Drawing.Point(16, 246);
+            this.lblPayableText.Name = "lblPayableText";
+            this.lblPayableText.Size = new System.Drawing.Size(145, 21);
+            this.lblPayableText.TabIndex = 2;
+            this.lblPayableText.Text = "Payable Amount: ";
+            // 
+            // lblTotalText
+            // 
+            this.lblTotalText.AutoSize = true;
+            this.lblTotalText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalText.Location = new System.Drawing.Point(18, 11);
+            this.lblTotalText.Name = "lblTotalText";
+            this.lblTotalText.Size = new System.Drawing.Size(56, 21);
+            this.lblTotalText.TabIndex = 1;
+            this.lblTotalText.Text = "Total: ";
+            // 
+            // lblTotalAmnt
+            // 
+            this.lblTotalAmnt.AutoSize = true;
+            this.lblTotalAmnt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalAmnt.Location = new System.Drawing.Point(184, 11);
+            this.lblTotalAmnt.Name = "lblTotalAmnt";
+            this.lblTotalAmnt.Size = new System.Drawing.Size(48, 21);
+            this.lblTotalAmnt.TabIndex = 0;
+            this.lblTotalAmnt.Text = "Total";
+            // 
+            // lblCashAmount
+            // 
+            this.lblCashAmount.AutoSize = true;
+            this.lblCashAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCashAmount.Location = new System.Drawing.Point(18, 207);
+            this.lblCashAmount.Name = "lblCashAmount";
+            this.lblCashAmount.Size = new System.Drawing.Size(120, 21);
+            this.lblCashAmount.TabIndex = 18;
+            this.lblCashAmount.Text = "Cash Amount: ";
+            // 
+            // txtCashAmount
+            // 
+            this.txtCashAmount.Location = new System.Drawing.Point(184, 207);
+            this.txtCashAmount.Name = "txtCashAmount";
+            this.txtCashAmount.Size = new System.Drawing.Size(100, 23);
+            this.txtCashAmount.TabIndex = 19;
+            // 
             // WaiterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 438);
+            this.Controls.Add(this.pnlPaymentPage);
             this.Controls.Add(this.topMenu);
-            this.Controls.Add(this.pnlMenu);
-            this.Controls.Add(this.tableLayoutPanelTable);
+            this.Controls.Add(this.pnlOrderDetails);
             this.Controls.Add(this.panelTableStatus);
             this.Controls.Add(this.pnlMenuCrud);
+            this.Controls.Add(this.tableLayoutPanelTable);
+            this.Controls.Add(this.pnlMenu);
             this.Name = "WaiterView";
             this.Text = "Chapeau - Restaurant Ordering System";
             this.topMenu.ResumeLayout(false);
@@ -639,6 +1006,12 @@
             this.pnlMenuAddUpdate.ResumeLayout(false);
             this.pnlMenuAddUpdate.PerformLayout();
             this.panelTableStatus.ResumeLayout(false);
+            this.pnlOrderDetails.ResumeLayout(false);
+            this.pnlOrderDetails.PerformLayout();
+            this.pnlPaymentPage.ResumeLayout(false);
+            this.pnlPaymentPage.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -691,5 +1064,38 @@
         private Button buttonFreeTable;
         private Button ServeButton;
         private Button buttonAddOrder;
+        private Button btnViewOrder;
+        private Panel pnlOrderDetails;
+        private Label lblOrderViewHeader;
+        private ListView listViewOrderDetails;
+        private ColumnHeader Menu;
+        private ColumnHeader Price;
+        private ColumnHeader Quantity;
+        private ColumnHeader VAT;
+        private ColumnHeader Total;
+        private Button btnProceedPayment;
+        private Panel pnlPaymentPage;
+        private Label lblTotalAmnt;
+        private Label lblPaymentPageHeader;
+        private Panel panel1;
+        private Button btnPayNow;
+        private TextBox txtComment;
+        private Label lblCommentText;
+        private RadioButton rbAmex;
+        private RadioButton rbMaster;
+        private RadioButton rbVisa;
+        private RadioButton rbCash;
+        private Label lblPMtext;
+        private CheckBox chckbxTip;
+        private TextBox txtTipAmount;
+        private TextBox txtTotalAmount;
+        private Label lblTipText;
+        private Label lblPayableText;
+        private Label lblTotalText;
+        private TextBox txtNumPeople;
+        private Label lblNoPeopleText;
+        private CheckBox chckbxSpliteBill;
+        private TextBox txtCashAmount;
+        private Label lblCashAmount;
     }
 }
